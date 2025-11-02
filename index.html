@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="nl">
+<link href='https://fonts.googleapis.com/css?family=Roboto Flex' rel='stylesheet'>
 
 <head>
   <title>Vlasblauw</title>
   <meta charset="UTF-8">
 </head>
 <style>
+  @font-face { font-family: RobotoFlex; src: url('RobotFlex-Regular.ttf'); }
   body {
     background-color: #ffffff;
     /* vlasblauw kleur 1b2c3e */
-    font-family: sans-serif;
+    font-family: 'Roboto Flex';
     text-align: center;
   }
 
@@ -17,55 +19,86 @@
   .topnav {
     background-color: #ffffff;
     overflow: hidden;
-    display: flex;
+    display: block;
     align-items: center;
-    padding: 6px 12px;
-    gap: 8px;
-    margin: auto
+    padding: 6px 6px;
+    margin: auto;
+  }
+
+  .topnav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px 0px 32px 0px;
+    overflow: hidden;
+  }
+
+  .nav-left {
+    float: left;
+  }
+
+  .nav-left ul li {
+    float: left;
+  }
+
+  .nav-right ul li {
+    float: right;
   }
 
   /* Logo inside topnav */
   .topnav .logo {
-    height: 48px;
+    height: 32px;
     width: auto;
-    display: block;
+    position: relative;
+    top: 0px;
+
   }
 
   /* Style the links inside the navigation bar */
   .topnav a {
-    color: #1b2c3e;
-    text-align: center;
-    padding: 14px 16px;
+    color: black;
+    position: relative;
+    top: 9px;
+    padding: 12px 6px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
+  }
+
+  .nav-right a {
+    top: 0px;
   }
 
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    /* background-color: #ddd; */
     color: black;
   }
 
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #1b2c3e;
-    color: white;
+    /* background-color: #1b2c3e; */
+    color: #1b2c3e;
+    font-weight: bold;
+    background-image: url('images/dot.jpg');
+    background-position-x: center;
+    background-position-y: 34px;
+    background-size: 10px;
+    background-repeat: no-repeat;
   }
 
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
-    /* max-width: 900px; */
+    max-width: 900px;
     margin: auto;
   }
 
   /* Gallery Items */
   .gallery-item {
     overflow: hidden;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    transition: transform 0.3s ease-in-out;
+    width:  200px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .gallery-item img {
@@ -84,9 +117,21 @@
 
 <body>
   <div class="topnav">
-    <img class="logo" src="/images/logo.jpg" alt="Vlasblauw Logo">
-    <a class="active" href="#">Projecten</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-left">
+      <ul>
+        <li><img class="logo" src="/images/logo_nowhites.jpg" alt="Vlasblauw Logo"></li>
+        <li><a href="vlasblauw.html">vlasblauw</a></li>
+        <li><a class="active" href="#">projecten</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="https://www.instagram.com/vlasblauw/">
+          <img src="images/icons/icons8-instagram-26.png">
+        </a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="gallery">
