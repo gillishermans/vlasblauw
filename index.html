@@ -5,142 +5,53 @@
 <head>
   <title>Vlasblauw</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-  @font-face { font-family: RobotoFlex; src: url('RobotFlex-Regular.ttf'); }
-  body {
-    background-color: #ffffff;
-    /* vlasblauw kleur 1b2c3e */
-    font-family: 'Roboto Flex';
-    text-align: center;
-  }
-
-  /* Navigation bar style */
-  .topnav {
-    background-color: #ffffff;
-    overflow: hidden;
-    display: block;
-    align-items: center;
-    padding: 6px 6px;
-    margin: auto;
-  }
-
-  .topnav ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px 0px 32px 0px;
-    overflow: hidden;
-  }
-
-  .nav-left {
-    float: left;
-  }
-
-  .nav-left ul li {
-    float: left;
-  }
-
-  .nav-right ul li {
-    float: right;
-  }
-
-  /* Logo inside topnav */
-  .topnav .logo {
-    height: 32px;
-    width: auto;
-    position: relative;
-    top: 0px;
-
-  }
-
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    color: black;
-    position: relative;
-    top: 9px;
-    padding: 12px 6px;
-    text-decoration: none;
-    font-size: 18px;
-  }
-
-  .nav-right a {
-    top: 0px;
-  }
-
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    /* background-color: #ddd; */
-    color: black;
-  }
-
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    /* background-color: #1b2c3e; */
-    color: #1b2c3e;
-    font-weight: bold;
-    background-image: url('images/dot.jpg');
-    background-position-x: center;
-    background-position-y: 34px;
-    background-size: 10px;
-    background-repeat: no-repeat;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  /* Gallery Items */
-  .gallery-item {
-    overflow: hidden;
-    width:  200px;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  @media (max-width: 600px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-  }
-</style>
 
 <body>
   <div class="topnav">
-    <div class="nav-left">
-      <ul>
-        <li><img class="logo" src="/images/logo_nowhites.jpg" alt="Vlasblauw Logo"></li>
-        <li><a href="vlasblauw.html">vlasblauw</a></li>
-        <li><a class="active" href="#">projecten</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </div>
-    <div class="nav-right">
-      <ul>
-        <li><a href="https://www.instagram.com/vlasblauw/">
-          <img src="images/icons/icons8-instagram-26.png">
-        </a></li>
-      </ul>
+    <div class="nav-container">
+      <div class="nav-left">
+        <ul>
+          <li><img class="logo" src="/images/logo_nowhites.jpg" alt="Vlasblauw Logo"></li>
+          <li><a href="vlasblauw.html">vlasblauw</a></li>
+          <li><a class="active" href="#">projecten</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="https://www.instagram.com/vlasblauw/">
+              <img class="social" src="images/icons/icons8-instagram-26.png">
+            </a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="gallery">
-    <div class="gallery-item"><a href="project.html"><img  src="/images/1Ayh5Y_w.jpeg" alt="poolhouse"></a></div>
-    <div class="gallery-item"><img src="/images/gXbAZvpI.jpeg" alt="poolhouse"></div>
-    <div class="gallery-item"><img src="/images/hEZzYwHI.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><a href="project.html"><img src="/images/gXbAZvpI.jpeg" alt=""></a></div>
+    <div class="gallery-item"><img src="/images/hEZzYwHI.jpeg" alt=""></div>
     <div class="gallery-item"><img src="/images/HHkal9gP.jpeg" alt="poolhouse"></div>
-    <div class="gallery-item"><img src="/images/stoel3.jpg" alt="poolhouse"></div>
-    <div class="gallery-item"><img src="/images/logo.jpg" alt="poolhouse"></div>
+    <div class="gallery-item"><img src="/images/sSDrMI-f.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><a href="project.html"><img src="/images/gXbAZvpI.jpeg" alt=""></a></div>
+    <div class="gallery-item"><img src="/images/hEZzYwHI.jpeg" alt=""></div>
+    <div class="gallery-item"><img src="/images/HHkal9gP.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><img src="/images/sSDrMI-f.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><a href="project.html"><img src="/images/gXbAZvpI.jpeg" alt=""></a></div>
+    <div class="gallery-item"><img src="/images/hEZzYwHI.jpeg" alt=""></div>
+    <div class="gallery-item"><img src="/images/HHkal9gP.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><img src="/images/sSDrMI-f.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><a href="project.html"><img src="/images/gXbAZvpI.jpeg" alt=""></a></div>
+    <div class="gallery-item"><img src="/images/hEZzYwHI.jpeg" alt=""></div>
+    <div class="gallery-item"><img src="/images/HHkal9gP.jpeg" alt="poolhouse"></div>
+    <div class="gallery-item"><img src="/images/sSDrMI-f.jpeg" alt="poolhouse"></div>
+  </div>
+
+  <div class="bottomnav">
+    <div class="nav-container">
+      <p>info@vlasblauw.be</p>
+    </div>
   </div>
 
 </body>

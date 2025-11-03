@@ -1,100 +1,54 @@
 <!DOCTYPE html>
 <html lang="nl">
+<link href='https://fonts.googleapis.com/css?family=Roboto Flex' rel='stylesheet'>
 
 <head>
   <title>Vlasblauw</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-  body {
-    background-color: #ffffff;
-    /* vlasblauw kleur 1b2c3e */
-    font-family: sans-serif;
-    text-align: center;
-  }
-  h1 {
-    font-size: 1em;
-  }
-
-  /* Navigation bar style */
-  .topnav {
-    background-color: #ffffff;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 6px 12px;
-    gap: 8px;
-    margin: auto
-  }
-
-  /* Logo inside topnav */
-  .topnav .logo {
-    height: 48px;
-    width: auto;
-    display: block;
-  }
-
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    color: #1b2c3e;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #1b2c3e;
-    color: white;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    /* max-width: 900px; */
-    margin: auto;
-  }
-
-  /* Gallery Items */
-  .gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-  @media (max-width: 600px) {
-    .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-  }
-</style>
 
 <body>
   <div class="topnav">
-    <img class="logo" src="/images/logo.jpg" alt="Vlasblauw Logo">
-    <a href="index.html">Projecten</a>
-    <a class="active" href="contact.html">Contact</a>
+    <div class="nav-container">
+      <div class="nav-left">
+        <ul>
+          <li><img class="logo" src="/images/logo_nowhites.jpg" alt="Vlasblauw Logo"></li>
+          <li><a href="vlasblauw.html">vlasblauw</a></li>
+          <li><a href="index.html">projecten</a></li>
+          <li><a class="active" href="contact.html">contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="https://www.instagram.com/vlasblauw/">
+              <img class="social" src="images/icons/icons8-instagram-26.png">
+            </a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <h1>Email</h1>
-    <p>info@vlasblauw.be</p>
+  <div class="text_block">
+    <div class="text-inner">
+      <div class="text-left">
+        <h1>atelier</h1>
+        <p>Pieter Nollekensstraat 85, 3010 Kessel-Lo<br></br></p>
+        <h1>email</h1>
+        <p>info@vlasblauw.be<br></br></p>
+        <h1>telefoon</h1>
+        <p>...<br></br></p>
+      </div>
+      <div class="text-right">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bottomnav">
+    <div class="nav-container">
+      <p>info@vlasblauw.be</p>
+    </div>
   </div>
 
 
