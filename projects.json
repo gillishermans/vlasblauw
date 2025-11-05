@@ -1,0 +1,38 @@
+[
+  {
+    "folder": "bars",
+    "thumbnail": "bars1.jpeg",
+    "images": [
+      "bars1.jpeg",
+      "bars2.jpeg"
+    ],
+    "title": "stalen staven",
+    "year": 2024,
+    "description": "Wat een mooie staven.",
+    "href": "projects/bars/"
+  },
+  {
+    "folder": "stoel",
+    "thumbnail": "stoel1.jpg",
+    "images": [
+      "stoel1.jpg",
+      "stoel2.jpg",
+      "stoel3.jpg"
+    ],
+    "title": "stoel",
+    "year": 2024,
+    "description": "Wat een mooie stoel.",
+    "href": "projects/stoel/"
+  },
+  {
+    "folder": "duck",
+    "thumbnail": "duck1.jpeg",
+    "images": [
+      "duck1.jpeg"
+    ],
+    "title": "kwaak",
+    "year": 2012,
+    "description": "Wat een mooie eend.",
+    "href": "projects/duck/"
+  }
+]
