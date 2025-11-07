@@ -9,7 +9,7 @@
   <style>
     p {
       max-width: 1075px;
-      margin: auto;
+       margin: 0px auto 100px auto;
       font-size: 16px;
       line-height: 1;
       color: #333;
@@ -54,19 +54,36 @@
       color: #666;
     }
 
+    .project-thumbnail {
+      max-width: 1075px;
+      margin: 12px auto 8px auto;
+      max-height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-thumbnail img {
+      max-height: 500px;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+
     .project-gallery {
       max-width: 1075px;
       margin: 20px auto 0px auto;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
 
     .project-gallery img {
-      max-width: 700px;
       width: 100%;
+      aspect-ratio: 1;
       height: auto;
-      display: block;
+      object-fit: cover;
     }
 
     .back {
@@ -105,6 +122,8 @@
       →</button>
   </div>
 
+  <!-- <div id="project-thumbnail" class="project-thumbnail"></div> -->
+
   <div id="project-gallery" class="project-gallery"></div>
 
   <div class="project-header">
@@ -112,7 +131,6 @@
     <div id="year">2025</div>
   </div>
   <p id="description">description</p>
-
 
   <div class="bottomnav">
     <div class="nav-container">
@@ -127,6 +145,7 @@
       const titleElement = document.getElementById('project-title');
       const yearElement = document.getElementById('year');
       const descriptionElement = document.getElementById('description');
+      //const thumbnailElement = document.getElementById('project-thumbnail');
       const galleryElement = document.getElementById('project-gallery');
       const prevBtn = document.getElementById('prev-project');
       const nextBtn = document.getElementById('next-project');
@@ -215,6 +234,11 @@
         galleryElement.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;">Geen afbeeldingen gevonden voor dit project.</p>';
         return;
       }
+
+      //Add image to thumbnail
+      //const src = joinPath(entry.href, entry.thumbnail);
+      //const safe = src.replace(/^\/+/, '');
+      //thumbnailElement.innerHTML = `<img src="${safe}" alt="">`;
 
       //Add images to gallery
       galleryElement.innerHTML = images.map(src => {
