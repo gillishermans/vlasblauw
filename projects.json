@@ -1,38 +1,93 @@
 [
-  {
-    "folder": "bars",
-    "thumbnail": "bars1.jpeg",
-    "images": [
-      "bars1.jpeg",
-      "bars2.jpeg"
-    ],
-    "title": "stalen staven",
-    "year": 2024,
-    "description": "Wat een mooie staven.",
-    "href": "projects/bars/"
-  },
-  {
-    "folder": "stoel",
-    "thumbnail": "stoel1.jpg",
-    "images": [
-      "stoel1.jpg",
-      "stoel2.jpg",
-      "stoel3.jpg"
-    ],
-    "title": "stoel",
-    "year": 2024,
-    "description": "Wat een mooie stoel.",
-    "href": "projects/stoel/"
-  },
-  {
-    "folder": "duck",
-    "thumbnail": "duck1.jpeg",
-    "images": [
-      "duck1.jpeg"
-    ],
-    "title": "kwaak",
-    "year": 2012,
-    "description": "Wat een mooie eend.",
-    "href": "projects/duck/"
-  }
+    {
+        "folder": "bars",
+        "thumbnail": "bars1.jpeg",
+        "images": [
+            "bars1.jpeg",
+            "bars2.jpeg",
+            "bars3.jpeg",
+            "bars4.jpeg"
+        ],
+        "title": "stalen staven",
+        "year": 2024,
+        "description": "Wat een mooie staven.",
+        "href": "projects/bars/"
+    },
+    {
+        "folder": "kast",
+        "thumbnail": "kast1.jpeg",
+        "images": [
+            "kast1.jpeg",
+            "kast2.jpeg",
+            "kast3.jpeg",
+            "kast4.jpeg"
+        ],
+        "title": "kast",
+        "year": 2024,
+        "description": "Wat een mooie staven.",
+        "href": "projects/kast/"
+    },
+    {
+        "folder": "wiel",
+        "thumbnail": "wiel1.jpeg",
+        "images": [
+            "wiel1.jpeg",
+            "wiel2.jpeg",
+            "wiel3.jpeg"
+        ],
+        "title": "wiel",
+        "year": 2024,
+        "description": "Wat een mooi wiel.",
+        "href": "projects/wiel/"
+    },
+    {
+        "folder": "hoops",
+        "thumbnail": "hoops2.jpeg",
+        "images": [
+            "hoops2.jpeg",
+            "hoops3.jpeg",
+            "hoops4.jpeg"
+        ],
+        "title": "hoops",
+        "year": 2024,
+        "description": "Wat een mooie cirkels.",
+        "href": "projects/hoops/"
+    },
+    {
+        "folder": "tas",
+        "thumbnail": "tas1.jpeg",
+        "images": [
+            "tas1.jpeg",
+            "tas2.jpeg",
+            "tas3.jpeg"
+        ],
+        "title": "tas",
+        "year": 2024,
+        "description": "Wat een mooie tas.",
+        "href": "projects/tas/"
+    },
+    {
+        "folder": "stoel",
+        "thumbnail": "stoel1.jpg",
+        "images": [
+            "stoel1.jpg",
+            "stoel2.jpg",
+            "stoel3.jpg"
+        ],
+        "title": "stoel",
+        "year": 2024,
+        "description": "Wat een mooie stoel.",
+        "href": "projects/stoel/"
+    },
+    {
+        "folder": "duck",
+        "thumbnail": "duck1.jpeg",
+        "images": [
+            "duck1.jpeg"
+        ],
+        "title": "kwaak",
+        "year": 2012,
+        "description": "Wat een mooie eend.",
+        "href": "projects/duck/"
+    }
 ]

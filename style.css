@@ -106,12 +106,22 @@ body {
     right: 16px;
 }
 
-/* Style the links inside the navigation bar */
+/*Style the links inside the navigation bar */
 .topnav a {
     color: black;
     position: relative;
     top: 9px;
     padding: 12px 6px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.topnav button {
+    color: black;
+    position: relative;
+    top: 9px;
+    padding: 12px 0px;
     text-decoration: none;
     font-size: 18px;
     line-height: 1;

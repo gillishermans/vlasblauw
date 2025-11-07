@@ -7,24 +7,63 @@
   <title>Project</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    p {
+      max-width: 1075px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1;
+      color: #333;
+      text-align: left;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      font-family: 'Roboto Flex';
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .buttons {
+      max-width: 1075px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 100px auto 0 auto;
+    }
+
     .project-header {
       max-width: 1075px;
-      margin: 20px auto;
+      margin: auto;
       display: flex;
       gap: 12px;
-      align-items: center;
+      align-items: baseline;
+    }
+
+    .project-header h2 {
+      font-size: 24px;
+      line-height: 1;
+      color: black;
+    }
+
+    .project-header #year {
+      margin: 0 0 0 8px;
+      font-size: 16px;
+      line-height: 1;
+      color: #666;
     }
 
     .project-gallery {
       max-width: 1075px;
-      margin: 100px auto 0px auto;
+      margin: 20px auto 0px auto;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
     .project-gallery img {
-      max-width: 320px;
+      max-width: 700px;
       width: 100%;
       height: auto;
       display: block;
@@ -46,7 +85,7 @@
         <ul>
           <li><img class="logo" src="/images/logo_nowhites.jpg" alt="Vlasblauw Logo"></li>
           <li><a href="vlasblauw.html">vlasblauw</a></li>
-          <li><a href="index.html">projecten</a></li>
+          <li><a class="active" href="index.html">projecten</a></li>
           <li><a href="contact.html">contact</a></li>
         </ul>
       </div>
@@ -60,13 +99,20 @@
     </div>
   </div>
 
+  <div class="buttons">
+    <button id="prev-project" type="button" aria-label="Vorig project">← Vorig project</button>
+    <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Volgend project
+      →</button>
+  </div>
+
   <div id="project-gallery" class="project-gallery"></div>
 
   <div class="project-header">
     <h2 id="project-title">Project</h2>
     <div id="year">2025</div>
-    <p id="description">description</p>
   </div>
+  <p id="description">description</p>
+
 
   <div class="bottomnav">
     <div class="nav-container">
@@ -82,6 +128,8 @@
       const yearElement = document.getElementById('year');
       const descriptionElement = document.getElementById('description');
       const galleryElement = document.getElementById('project-gallery');
+      const prevBtn = document.getElementById('prev-project');
+      const nextBtn = document.getElementById('next-project');
 
       if (!folder) {
         galleryElement.innerHTML = '<p>No project specified.</p>';
@@ -95,25 +143,48 @@
         return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
       }
 
-      //Load projects.json and return the matching entry
-      async function loadManifestEntry() {
-        try {
-          const res = await fetch('./projects.json', { cache: 'no-cache' });
-          if (!res.ok) return null;
-          const items = await res.json();
-          if (!Array.isArray(items)) return null;
-          const entry = items.find(it =>
-            it.folder === decodedFolder ||
-            it.title === decodedFolder ||
-            (it.href && it.href.replace(/\/$/, '').endsWith(decodedFolder))
-          );
-          return entry || null;
-        } catch (e) {
-          return null;
+      //Load full manifest
+      let manifest = [];
+      try {
+        const res = await fetch('./projects.json', { cache: 'no-cache' });
+        if (res.ok) manifest = await res.json();
+      } catch (e) { manifest = []; }
+      const manifestIndex = Array.isArray(manifest)
+        ? manifest.findIndex(it =>
+          it.folder === decodedFolder ||
+          it.title === decodedFolder ||
+          (it.href && it.href.replace(/\/$/, '').endsWith(decodedFolder))
+        )
+        : -1;
+
+      //Get the entry from manifest based on computed index  
+      const entry = manifestIndex !== -1 && Array.isArray(manifest) ? manifest[manifestIndex] : null;
+
+      //Setup previous and next buttons
+      if (prevBtn && nextBtn) {
+        if (manifestIndex > 0) {
+          prevBtn.addEventListener('click', () => {
+            const target = manifest[manifestIndex - 1];
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+          });
+        } else {
+          prevBtn.addEventListener('click', () => {
+            const target = manifest[manifest.length - 1];
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+          });
+        }
+        if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
+          nextBtn.addEventListener('click', () => {
+            const target = manifest[manifestIndex + 1];
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+          });
+        } else {
+          nextBtn.addEventListener('click', () => {
+            const target = manifest[0];
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+          });
         }
       }
-
-      const entry = await loadManifestEntry();
 
       //If no entry found in manifest display message
       if (!entry) {
