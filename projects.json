@@ -15,12 +15,12 @@
     },
     {
         "folder": "kast",
-        "thumbnail": "kast1.jpeg",
+        "thumbnail": "kast0.jpeg",
         "images": [
+            "kast0.jpeg",
             "kast1.jpeg",
             "kast2.jpeg",
-            "kast3.jpeg",
-            "kast4.jpeg"
+            "kast3.jpeg"
         ],
         "title": "kast",
         "year": 2024,

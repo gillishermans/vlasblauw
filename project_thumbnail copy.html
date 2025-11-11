@@ -9,7 +9,7 @@
   <style>
     p {
       max-width: 1075px;
-       margin: 0px auto 100px auto;
+       margin: 0px auto 0px auto;
       font-size: 16px;
       line-height: 1;
       color: #333;
@@ -73,7 +73,7 @@
 
     .project-gallery {
       max-width: 1075px;
-      margin: 20px auto 0px auto;
+      margin: 20px auto 100px auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
@@ -118,15 +118,15 @@
       →</button>
   </div>
 
-  <!-- <div id="project-thumbnail" class="project-thumbnail"></div> -->
-
-  <div id="project-gallery" class="project-gallery"></div>
+  <div id="project-thumbnail" class="project-thumbnail"></div>
 
   <div class="project-header">
     <h2 id="project-title">Project</h2>
     <div id="year">2025</div>
   </div>
   <p id="description">description</p>
+
+  <div id="project-gallery" class="project-gallery"></div>
 
   <div class="bottomnav">
     <div class="nav-container">
@@ -141,7 +141,7 @@
       const titleElement = document.getElementById('project-title');
       const yearElement = document.getElementById('year');
       const descriptionElement = document.getElementById('description');
-      //const thumbnailElement = document.getElementById('project-thumbnail');
+      const thumbnailElement = document.getElementById('project-thumbnail');
       const galleryElement = document.getElementById('project-gallery');
       const prevBtn = document.getElementById('prev-project');
       const nextBtn = document.getElementById('next-project');
@@ -180,23 +180,23 @@
         if (manifestIndex > 0) {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex - 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         } else {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifest.length - 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         }
         if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
           nextBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex + 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         } else {
           nextBtn.addEventListener('click', () => {
             const target = manifest[0];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         }
       }
@@ -232,9 +232,9 @@
       }
 
       //Add image to thumbnail
-      //const src = joinPath(entry.href, entry.thumbnail);
-      //const safe = src.replace(/^\/+/, '');
-      //thumbnailElement.innerHTML = `<img src="${safe}" alt="">`;
+      const src = joinPath(entry.href, entry.thumbnail);
+      const safe = src.replace(/^\/+/, '');
+      thumbnailElement.innerHTML = `<img src="${safe}" alt="">`;
 
       //Add images to gallery
       galleryElement.innerHTML = images.map(src => {

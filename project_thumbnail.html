@@ -9,7 +9,7 @@
   <style>
     p {
       max-width: 1075px;
-       margin: 0px auto 100px auto;
+      margin: 0px auto 0px auto;
       font-size: 16px;
       line-height: 1;
       color: #333;
@@ -57,23 +57,48 @@
     .project-thumbnail {
       max-width: 1075px;
       margin: 12px auto 8px auto;
-      max-height: 500px;
+      max-height: 650px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
+      padding-bottom: 12px;
     }
 
-    .project-thumbnail img {
-      max-height: 500px;
+    .project-thumbnail .thumb-wrap img {
+      max-height: 650px;
       width: auto;
       height: auto;
       display: block;
+      margin: 0 auto;
+    }
+
+    .project-thumbnail .img-nav {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      color: black;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      margin: 0 6px;
+      pointer-events: auto;
+      font-size: 30px;
+      overflow: hidden;
+    }
+
+    .project-thumbnail .img-nav.prev {
+      left: 8px;
+    }
+
+    .project-thumbnail .img-nav.next {
+      right: 8px;
     }
 
     .project-gallery {
       max-width: 1075px;
-      margin: 20px auto 0px auto;
+      margin: 20px auto 100px auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
@@ -84,6 +109,7 @@
       aspect-ratio: 1;
       height: auto;
       object-fit: cover;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -105,7 +131,8 @@
               <img class="social" src="images/icons/icons8-instagram-26.png">
             </a></li>
           <li><a href="mailto:vlasblauw@info.be">
-              <img class="social" src="images/icons/email-envelope-outline-shape-with-rounded-corners_icon-icons.com_56530.png">
+              <img class="social"
+                src="images/icons/email-envelope-outline-shape-with-rounded-corners_icon-icons.com_56530.png">
             </a></li>
         </ul>
       </div>
@@ -118,15 +145,19 @@
       →</button>
   </div>
 
-  <!-- <div id="project-thumbnail" class="project-thumbnail"></div> -->
-
-  <div id="project-gallery" class="project-gallery"></div>
+  <div id="project-thumbnail" class="project-thumbnail">
+    <button class="img-nav prev" id="img-prev" aria-label="Vorige afbeelding">‹</button>
+    <div id= "thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
+    <button class="img-nav next" id="img-next" aria-label="Volgende afbeelding">›</button>
+  </div>
 
   <div class="project-header">
     <h2 id="project-title">Project</h2>
     <div id="year">2025</div>
   </div>
   <p id="description">description</p>
+
+  <div id="project-gallery" class="project-gallery"></div>
 
   <div class="bottomnav">
     <div class="nav-container">
@@ -141,10 +172,13 @@
       const titleElement = document.getElementById('project-title');
       const yearElement = document.getElementById('year');
       const descriptionElement = document.getElementById('description');
-      //const thumbnailElement = document.getElementById('project-thumbnail');
+      const thumbnailElement = document.getElementById('project-thumbnail');
+      const thumbnailImageElement = document.getElementById('thumb-wrap');
       const galleryElement = document.getElementById('project-gallery');
       const prevBtn = document.getElementById('prev-project');
       const nextBtn = document.getElementById('next-project');
+      const imgPrev = document.getElementById('img-prev');
+      const imgNext = document.getElementById('img-next');
 
       if (!folder) {
         galleryElement.innerHTML = '<p>No project specified.</p>';
@@ -180,23 +214,23 @@
         if (manifestIndex > 0) {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex - 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         } else {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifest.length - 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         }
         if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
           nextBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex + 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         } else {
           nextBtn.addEventListener('click', () => {
             const target = manifest[0];
-            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
           });
         }
       }
@@ -231,16 +265,65 @@
         return;
       }
 
-      //Add image to thumbnail
-      //const src = joinPath(entry.href, entry.thumbnail);
-      //const safe = src.replace(/^\/+/, '');
-      //thumbnailElement.innerHTML = `<img src="${safe}" alt="">`;
+      let currentIndex = 0;
 
-      //Add images to gallery
-      galleryElement.innerHTML = images.map(src => {
-        const safe = src.replace(/^\/+/, '');
-        return `<div class="gallery-item"><img src="${safe}" alt=""></div>`;
+      //Render gallery excluding the currentIndex
+      function renderGallery() {
+        galleryElement.innerHTML = images.map((src, idx) => {
+          if (idx === currentIndex) return '';
+          const safe = String(src).replace(/^\/+/, '');
+          return `<div class="gallery-item" data-index="${idx}"><img src="${safe}" alt=""></div>`;
+        }).join('');
+      }
+
+      //Display image at given index in the thumbnail area
+      function renderIndex(i) {
+        currentIndex = ((i % images.length) + images.length) % images.length;
+        const safe = String(images[currentIndex]).replace(/^\/+/, '');
+        thumbnailImageElement.innerHTML = `<img src="${safe}" alt="">`;
+        renderGallery();
+        //Scroll the page so the thumbnail is at the top of the viewport
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      //Add image to thumbnail
+      const src = joinPath(entry.href, entry.thumbnail);
+      const safe = src.replace(/^\/+/, '');
+      thumbnailImageElement.innerHTML = `<img src="${safe}" alt="">`;
+      //Mark initial index if thumbnail matches one of images (initial thumbnail not necessarily first image)
+      const matched = images.findIndex(p => p.replace(/^\/+/, '').endsWith(String(entry.thumbnail || '').replace(/^\/+/, '')));
+      currentIndex = matched !== -1 ? matched : 0;
+      renderIndex(currentIndex);
+
+      //Hide image buttons when there's only one image in the project
+      if (images.length <= 1) {
+        if (imgPrev) { imgPrev.style.display = 'none'; imgPrev.setAttribute('aria-hidden','true'); }
+        if (imgNext) { imgNext.style.display = 'none'; imgNext.setAttribute('aria-hidden','true'); }
+      } else {
+        if (imgPrev) { imgPrev.style.display = ''; imgPrev.removeAttribute('aria-hidden'); }
+        if (imgNext) { imgNext.style.display = ''; imgNext.removeAttribute('aria-hidden'); }
+      }
+
+      //Add events to image buttons
+      if (imgPrev && imgNext) {
+        imgPrev.addEventListener('click', () => renderIndex(currentIndex - 1));
+        imgNext.addEventListener('click', () => renderIndex(currentIndex + 1));
+      }
+
+      // Add images to gallery, excluding the currently displayed thumbnail
+      galleryElement.innerHTML = images.map((src, idx) => {
+        if (idx === currentIndex) return ''; //Skip current thumbnail
+        const safe = String(src).replace(/^\/+/, '');
+        return `<div class="gallery-item" data-index="${idx}"><img src="${safe}" alt=""></div>`;
       }).join('');
+
+      //Make gallery images clickable to display in thumbnail
+      galleryElement.addEventListener('click', (e) => {
+        const item = e.target.closest('.gallery-item');
+        if (!item) return;
+        const idx = Number(item.getAttribute('data-index'));
+        if (!Number.isNaN(idx)) renderIndex(idx);
+      });
     })();
   </script>
 </body>
