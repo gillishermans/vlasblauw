@@ -196,7 +196,7 @@ body {
     object-fit: cover;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 900px) {
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
