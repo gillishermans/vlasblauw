@@ -227,6 +227,11 @@ body {
         aspect-ratio: 1 / 1;
     }
 
+    .text_block{
+        margin: 60px auto 60px;
+        padding: 0px 10px;
+    }
+
     .text_block .text-inner {
         flex-direction: column;
         gap: 20px;
@@ -241,4 +246,5 @@ body {
     .text_block .text-right {
         justify-content: center;
     }
+
 }
