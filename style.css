@@ -197,6 +197,9 @@ body {
 }
 
 @media (max-width: 600px) {
+    .topnav a {
+        font-size: 24px;
+    }
     .gallery {
         grid-template-columns: repeat(3, 1fr);
     }
