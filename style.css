@@ -175,7 +175,7 @@ body {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 1075px;
     margin: 100px auto 100px;
@@ -198,7 +198,7 @@ body {
 
 @media (max-width: 900px) {
     .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .gallery-item {
