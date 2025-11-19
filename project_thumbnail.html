@@ -31,7 +31,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 100px auto 0 auto;
+      margin: 125px auto 0 auto;
     }
 
     .project-header {
@@ -100,20 +100,32 @@
     .project-gallery {
       max-width: 1075px;
       margin: 20px auto 100px auto;
-      display: grid;
-      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 0 12px;
     }
 
-    .project-gallery img {
-      max-width: 1000px;
-      cursor: pointer;
+    .project-gallery .gallery-item {
       max-height: 650px;
+      max-width: 1075px; 
       width: auto;
       height: auto;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .project-gallery .gallery-item img {
+      max-height: 650px;
+      max-width: 1075px; 
+      width: auto;        
+      height: auto;             
       display: block;
-      margin: 0 auto;
+      object-fit: contain;
     }
 
     @media (max-width: 600px) {
@@ -167,20 +179,19 @@
 
   <div class="buttons">
     <button id="prev-project" type="button" aria-label="Vorig project">← Previous</button>
-    <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Next→</button>
+    <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Next →</button>
   </div>
 
   <div id="project-thumbnail" class="project-thumbnail">
-    <button class="img-nav prev" id="img-prev" aria-label="Vorige afbeelding">‹</button>
     <div id= "thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
-    <button class="img-nav next" id="img-next" aria-label="Volgende afbeelding">›</button>
   </div>
 
   <div class="project-header">
     <h2 id="project-title">Project</h2>
     <div id="year">2025</div>
   </div>
-  <p id="description">description</p>
+  <p id="descriptionNL">description</p>
+  <p id="descriptionEN" style="font-style: italic">description</p>
 
   <div id="project-gallery" class="project-gallery"></div>
 
@@ -196,7 +207,8 @@
       const folder = params.get('folder');
       const titleElement = document.getElementById('project-title');
       const yearElement = document.getElementById('year');
-      const descriptionElement = document.getElementById('description');
+      const descriptionNLElement = document.getElementById('descriptionNL');
+      const descriptionENElement = document.getElementById('descriptionEN');
       const thumbnailElement = document.getElementById('project-thumbnail');
       const thumbnailImageElement = document.getElementById('thumb-wrap');
       const galleryElement = document.getElementById('project-gallery');
@@ -225,10 +237,7 @@
       } catch (e) { manifest = []; }
       const manifestIndex = Array.isArray(manifest)
         ? manifest.findIndex(it =>
-          it.folder === decodedFolder ||
-          it.title === decodedFolder ||
-          (it.href && it.href.replace(/\/$/, '').endsWith(decodedFolder))
-        )
+          it.title === decodedFolder)
         : -1;
 
       //Get the entry from manifest based on computed index  
@@ -239,23 +248,23 @@
         if (manifestIndex > 0) {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex - 1];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.title)}`;
           });
         } else {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifest.length - 1];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.title)}`;
           });
         }
         if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
           nextBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex + 1];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.title)}`;
           });
         } else {
           nextBtn.addEventListener('click', () => {
             const target = manifest[0];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.title)}`;
           });
         }
       }
@@ -269,7 +278,8 @@
       //Set title/year/description/images from json manifest if available
       titleElement.textContent = entry.title;
       yearElement.textContent = entry.year;
-      descriptionElement.textContent = entry.description;
+      descriptionNLElement.textContent = entry.description_nl;
+      descriptionENElement.textContent = entry.description_en;
       let images = entry.images;
 
       //Add project folder path to images if absolute path not specified
@@ -280,7 +290,7 @@
         if (looksAbsolute || hasProjectsPrefix) {
           return img.replace(/^\/+/, '');
         }
-        const base = entry.href || `projects/${entry.folder}/`;
+        const base = `projects/${entry.title}/`;
         return joinPath(base, img);
       });
 
@@ -320,35 +330,12 @@
       currentIndex = matched !== -1 ? matched : 0;
       renderIndex(currentIndex);
 
-      //Hide image buttons when there's only one image in the project
-      if (images.length <= 1) {
-        if (imgPrev) { imgPrev.style.display = 'none'; imgPrev.setAttribute('aria-hidden','true'); }
-        if (imgNext) { imgNext.style.display = 'none'; imgNext.setAttribute('aria-hidden','true'); }
-      } else {
-        if (imgPrev) { imgPrev.style.display = ''; imgPrev.removeAttribute('aria-hidden'); }
-        if (imgNext) { imgNext.style.display = ''; imgNext.removeAttribute('aria-hidden'); }
-      }
-
-      //Add events to image buttons
-      if (imgPrev && imgNext) {
-        imgPrev.addEventListener('click', () => renderIndex(currentIndex - 1));
-        imgNext.addEventListener('click', () => renderIndex(currentIndex + 1));
-      }
-
       // Add images to gallery, excluding the currently displayed thumbnail
       galleryElement.innerHTML = images.map((src, idx) => {
         if (idx === currentIndex) return ''; //Skip current thumbnail
         const safe = String(src).replace(/^\/+/, '');
         return `<div class="gallery-item" data-index="${idx}"><img src="${safe}" alt=""></div>`;
       }).join('');
-
-      //Make gallery images clickable to display in thumbnail
-      galleryElement.addEventListener('click', (e) => {
-        const item = e.target.closest('.gallery-item');
-        if (!item) return;
-        const idx = Number(item.getAttribute('data-index'));
-        if (!Number.isNaN(idx)) renderIndex(idx);
-      });
     })();
   </script>
 </body>

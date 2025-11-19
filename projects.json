@@ -1,6 +1,6 @@
 [
     {
-        "folder": "2507BWL",
+        "title": "2507BWL",
         "thumbnail": "BWL_1.jpeg",
         "images": [
             "BWL_1.jpeg",
@@ -8,100 +8,74 @@
             "BWL_3.jpeg",
             "BWL_4.jpeg"
         ],
-        "title": "2507BWL",
-        "year": "Leuven, 2024",
-        "description": ".",
-        "href": "projects/2507BWL/"
+        "year": "Leuven, 2025",
+        "description_nl": " 'Zomertank 2025: Born to be Wild' door Line Boogaerts, Ditmar Goes en Mei-Lan NG i.o. Werktank met steun van Stad Leuven en Vlaamse Overheid",
+        "description_en": " 'Zomertank 2025: Born to be Wild' by Line Boogaerts, Ditmar Goes en Mei-Lan NG for Werktank supported by Stad Leuven and Vlaamse Overheid",
+        "task": "Collaboration",
+        "credits": "Sophie Deforce"
     },
     {
-        "folder": "bars",
-        "thumbnail": "bars1.jpeg",
+        "title": "2506SLS",
+        "thumbnail": "SLS_1.jpeg",
         "images": [
-            "bars1.jpeg",
-            "bars2.jpeg",
-            "bars3.jpeg",
-            "bars4.jpeg"
+            "SLS_1.jpeg",
+            "SLS_2.png",
+            "SLS_3.jpg",
+            "SLS_4.jpg",
+            "SLS_5.jpg"
         ],
-        "title": "stalen staven",
-        "year": 2024,
-        "description": "Wat een mooie staven.",
-        "href": "projects/bars/"
+        "year": "Tildonk, 2025",
+        "description_nl": "Work In Progress: Vierdelige trapconstructie met gerecupereerde eik van Atelier Circuler",
+        "description_en": "Work In Progress: Four-section stair construction with recycled oak from Atelier Circuler",
+        "task": "Design and Execution",
+        "credits": ""
     },
     {
-        "folder": "kast",
-        "thumbnail": "kast0.jpeg",
+        "title": "2505OTA",
+        "thumbnail": "OTA_1.jpeg",
         "images": [
-            "kast0.jpeg",
-            "kast1.jpeg",
-            "kast2.jpeg",
-            "kast3.jpeg"
+            "OTA_1.jpeg",
+            "OTA_2.jpeg",
+            "OTA_3.jpeg",
+            "OTA_4.jpeg"
         ],
-        "title": "kast",
-        "year": 2024,
-        "description": "Wat een mooie kast.",
-        "href": "projects/kast/"
+        "year": "Leuven, 2025",
+        "description_nl": "Laswerk voor Timme Afschrift",
+        "description_en": "Welding for Timme Afschrift",
+        "task": "Execution",
+        "credits": "Jan De Wilde"
     },
     {
-        "folder": "wiel",
-        "thumbnail": "wiel1.jpeg",
+        "title": "2504PKS",
+        "thumbnail": "PKS_1.jpg",
         "images": [
-            "wiel1.jpeg",
-            "wiel2.jpeg",
-            "wiel3.jpeg"
+            "PKS_1.jpg",
+            "PKS_2.jpg",
+            "PKS_3.jpg"
         ],
-        "title": "wiel",
-        "year": 2024,
-        "description": "Wat een mooi wiel.",
-        "href": "projects/wiel/"
+        "year": "Antwerp, 2025",
+        "description_nl": "Aluminium Tas Design door Kamilla Szemere",
+        "description_en": "Aluminium Bag Design by Kamilla Szemere",
+        "task": "Collaboration",
+        "credits": "Kamilla Szemere"
     },
     {
-        "folder": "hoops",
-        "thumbnail": "hoops2.jpeg",
+        "title": "2504IHS",
+        "thumbnail": "IHS_1.jpg",
         "images": [
-            "hoops2.jpeg",
-            "hoops3.jpeg",
-            "hoops4.jpeg"
+            "IHS_1.jpg",
+            "IHS_2.jpg",
+            "IHS_3.jpg",
+            "IHS_4.jpeg",
+            "IHS_5.jpeg",
+            "IHS_6.jpg",
+            "IHS_7.jpg"
         ],
-        "title": "hoops",
-        "year": 2024,
-        "description": "Wat een mooie cirkels.",
-        "href": "projects/hoops/"
-    },
-    {
-        "folder": "tas",
-        "thumbnail": "tas1.jpeg",
-        "images": [
-            "tas1.jpeg",
-            "tas2.jpeg",
-            "tas3.jpeg"
-        ],
-        "title": "tas",
-        "year": 2024,
-        "description": "Wat een mooie tas.",
-        "href": "projects/tas/"
-    },
-    {
-        "folder": "stoel",
-        "thumbnail": "stoel1.jpg",
-        "images": [
-            "stoel1.jpg",
-            "stoel2.jpg",
-            "stoel3.jpg"
-        ],
-        "title": "stoel",
-        "year": 2024,
-        "description": "Wat een mooie stoel.",
-        "href": "projects/stoel/"
-    },
-    {
-        "folder": "duck",
-        "thumbnail": "duck1.jpeg",
-        "images": [
-            "duck1.jpeg"
-        ],
-        "title": "kwaak",
-        "year": 2012,
-        "description": "Wat een mooie eend.",
-        "href": "projects/duck/"
+        "year": "Monthey, 2025",
+        "description_nl": "Scenographie voor 'Idle Hour' door Motus murmuri",
+        "description_en": "Scenography for 'Idle Hour' by Motus murmuri",
+        "task": "Design and Execution",
+        "credits": "Maïm Dedeene"
     }
+    
 ]

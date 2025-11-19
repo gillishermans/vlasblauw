@@ -51,11 +51,12 @@
       margin-top: 0px;
       margin-bottom: 0px;
       position: relative;
-      bottom: 25px;
+      bottom: 10px;
     }
 
     .project .project-header h2 {
       font-size: 18px;
+      margin: 0px;
     }
 
     .project .project-header .year {
@@ -139,7 +140,7 @@
         }
         if (!t) return '';
         if (looksAbsolute || hasProjectsPrefix) return t.replace(/^\/+/, '');
-        const base = it.href || `projects/${it.folder}/`;
+        const base = `projects/${it.title}/`;
         return joinPath(base, t);
       }
 
@@ -161,12 +162,12 @@
           const thumbDiv = document.createElement('div');
           thumbDiv.className = 'project-thumbnail';
           const link = document.createElement('a');
-          const folderName = encodeURIComponent(it.folder || (it.href || '').replace(/\/$/, '').split('/').pop() || '');
+          const folderName = encodeURIComponent(it.title.replace(/\/$/, '').split('/').pop() || '');
           link.href = `project_thumbnail.html?folder=${folderName}`;
           const img = document.createElement('img');
           const thumbSrc = resolveThumb(it);
           if (thumbSrc) img.src = thumbSrc;
-          img.alt = it.title || it.folder || '';
+          img.alt = it.title;
           link.appendChild(img);
           thumbDiv.appendChild(link);
 
