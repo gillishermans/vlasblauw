@@ -8,6 +8,7 @@ body {
     /* vlasblauw kleur 1b2c3e */
     font-family: 'Roboto Flex';
     text-align: center;
+    font-weight: 200;
 }
 
 .text_block {
@@ -25,8 +26,9 @@ body {
 }
 
 .text_block p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.0;
+    font-weight: 200;
 }
 
 /* Two-column layout for .text_block */

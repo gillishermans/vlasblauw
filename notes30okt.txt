@@ -23,3 +23,19 @@ aanpasbaarheid
 - nieuwe projecten makkelijk toevoegen (fotos + uitleg uploaden en code voegt het zelf toe?)
 
 
+
+
+
+2de meeting
+- 2 kolommen projecten
+    klik door naar project pagina
+    thumbnail tekst eronder zoals 1kolom
+    daaronder alle fotos scrollend
+
+- engels
+
+-contact - een foto?
+
+- roboto extra light?
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<link href='https://fonts.googleapis.com/css?family=Roboto Flex' rel='stylesheet'>
+
+<head>
+  <title>Vlasblauw</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Vlasblauw" />
+  <link rel="manifest" href="/images/site.webmanifest" />
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <ul>
+          <li><img class="logo" src="images/logo-nowhites.jpg" alt="Vlasblauw Logo"></li>
+          <li><a href="vlasblauw.html">vlasblauw</a></li>
+          <li><a class="active" href="#">projecten</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="https://www.instagram.com/vlasblauw/">
+              <img class="social" src="images/icons/icons8-instagram-26.png">
+            </a></li>
+          <li><a href="mailto:vlasblauw@info.be">
+              <img class="social" src="images/icons/email-envelope-outline-shape-with-rounded-corners_icon-icons.com_56530.png">
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery" id="gallery">
+  </div>
+
+  <script>
+    (async function () {
+      const gallery = document.getElementById('gallery');
+
+      //Joins the path to form absolute path
+      function joinPath(a, b) {
+        return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
+      }
+
+      //Load projects.json, fill the gallery with thumbnails of every project entry and link to project page
+      try {
+        const res = await fetch('./projects.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('projects.json not found');
+        const items = await res.json();
+        if (!Array.isArray(items) || !items.length) {
+          gallery.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;>Kan gallerij niet laden.</p>';
+          return;
+        }
+
+        gallery.innerHTML = items.map(it => {
+          const title = it.title || it.folder || '';
+          const folder = encodeURIComponent(it.folder || (it.href || '').replace(/\/$/, '').split('/').pop());
+          const href = `project_thumbnail.html?folder=${folder}`;
+
+          //Add project folder path to images if absolute path not specified
+          let img = String(it.thumbnail || '').trim();
+          const imageLooksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(img);
+          const imageHasProjectsPrefix = img.startsWith('projects/');
+          if (!imageLooksAbsolute && !imageHasProjectsPrefix) {
+            const base = it.href || `projects/${it.folder}/`;
+            img = joinPath(base, img);
+          } else {
+            img = img.replace(/^\/+/, '');
+          }
+
+          return `<div class="gallery-item"><a href="${href}"><img src="${img}" alt="${title}"></a></div>`;
+        }).join('');
+      } catch (err) {
+        console.warn(err);
+        gallery.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;>Kan gallerij niet laden.</p>';
+      }
+    })();
+  </script>
+
+  <div class="bottomnav">
+    <div class="nav-container">
+      <p>info@vlasblauw.be | +32491047057</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

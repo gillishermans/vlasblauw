@@ -13,6 +13,75 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Vlasblauw" />
   <link rel="manifest" href="/images/site.webmanifest" />
+  <style>
+    #projects-container {
+      max-width: 1100px;
+      margin: 100px auto;
+      padding: 0 12px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* project card */
+    .project {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0px auto 0px auto;
+    }
+
+    .project .project-thumbnail,
+    .project .project-thumbnail img {
+      width: 525px;
+      height: 525px;
+      display: block;
+      align-self: center;
+      object-fit: cover;
+      margin: 0px auto;
+    }
+
+    .project .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      position: relative;
+      bottom: 25px;
+    }
+
+    .project .project-header h2 {
+      font-size: 18px;
+    }
+
+    .project .project-header .year {
+      font-size: 14px;
+    }
+
+    /* responsive: single column on small screens */
+    @media (max-width: 900px) {
+      #projects-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 24px auto;
+      }
+    }
+
+    /* optional: tighter spacing on very small screens */
+    @media (max-width: 480px) {
+      #projects-container {
+        padding: 0 8px;
+      }
+
+      .project {
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -22,75 +91,106 @@
         <ul>
           <li><img class="logo" src="images/logo-nowhites.jpg" alt="Vlasblauw Logo"></li>
           <li><a href="vlasblauw.html">vlasblauw</a></li>
-          <li><a class="active" href="#">projecten</a></li>
+          <li><a class="active" href="#">projects</a></li>
           <li><a href="contact.html">contact</a></li>
         </ul>
       </div>
       <div class="nav-right">
         <ul>
-          <li><a href="https://www.instagram.com/vlasblauw/">
-              <img class="social" src="images/icons/icons8-instagram-26.png">
-            </a></li>
           <li><a href="mailto:vlasblauw@info.be">
-              <img class="social" src="images/icons/email-envelope-outline-shape-with-rounded-corners_icon-icons.com_56530.png">
+              <img class="social"
+                src="images/icons/icons8-mail-96.png">
+            </a></li>
+          <li><a href="https://www.instagram.com/vlasblauw/">
+              <img class="social" style="height:20px" src="images/icons/icons8-instagram-26.png">
+            </a></li>
+          <li><a href="https://www.facebook.com/vlasblauw/">
+              <img class="social"
+                src="images/icons/icons8-facebook-96.png">
             </a></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="gallery" id="gallery">
-  </div>
-
-  <script>
-    (async function () {
-      const gallery = document.getElementById('gallery');
-
-      //Joins the path to form absolute path
-      function joinPath(a, b) {
-        return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
-      }
-
-      //Load projects.json, fill the gallery with thumbnails of every project entry and link to project page
-      try {
-        const res = await fetch('./projects.json', { cache: 'no-cache' });
-        if (!res.ok) throw new Error('projects.json not found');
-        const items = await res.json();
-        if (!Array.isArray(items) || !items.length) {
-          gallery.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;>Kan gallerij niet laden.</p>';
-          return;
-        }
-
-        gallery.innerHTML = items.map(it => {
-          const title = it.title || it.folder || '';
-          const folder = encodeURIComponent(it.folder || (it.href || '').replace(/\/$/, '').split('/').pop());
-          const href = `project_thumbnail.html?folder=${folder}`;
-
-          //Add project folder path to images if absolute path not specified
-          let img = String(it.thumbnail || '').trim();
-          const imageLooksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(img);
-          const imageHasProjectsPrefix = img.startsWith('projects/');
-          if (!imageLooksAbsolute && !imageHasProjectsPrefix) {
-            const base = it.href || `projects/${it.folder}/`;
-            img = joinPath(base, img);
-          } else {
-            img = img.replace(/^\/+/, '');
-          }
-
-          return `<div class="gallery-item"><a href="${href}"><img src="${img}" alt="${title}"></a></div>`;
-        }).join('');
-      } catch (err) {
-        console.warn(err);
-        gallery.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;>Kan gallerij niet laden.</p>';
-      }
-    })();
-  </script>
+  <div id="projects-container"></div>
 
   <div class="bottomnav">
     <div class="nav-container">
       <p>info@vlasblauw.be | +32491047057</p>
     </div>
   </div>
+
+  <script>
+    (async function () {
+      const container = document.getElementById('projects-container');
+
+      function joinPath(a, b) {
+        return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
+      }
+
+      function resolveThumb(it) {
+        let t = String(it.thumbnail || '').trim();
+        const looksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(t);
+        const hasProjectsPrefix = t.startsWith('projects/');
+        if (!t) {
+          //Fallback to first image of images array if present
+          if (Array.isArray(it.images) && it.images.length) t = it.images[0];
+        }
+        if (!t) return '';
+        if (looksAbsolute || hasProjectsPrefix) return t.replace(/^\/+/, '');
+        const base = it.href || `projects/${it.folder}/`;
+        return joinPath(base, t);
+      }
+
+      try {
+        const res = await fetch('./projects.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('projects.json not found');
+        const items = await res.json();
+        if (!Array.isArray(items) || !items.length) {
+          container.innerHTML = '<p style="font-style:italic;text-align:center;margin:60px auto;">Kan projecten niet laden.</p>';
+          return;
+        }
+
+        //Build DOM for each project
+        items.forEach((it) => {
+          const projectEl = document.createElement('section');
+          projectEl.className = 'project';
+
+          //Thumbnail (linked to project viewer)
+          const thumbDiv = document.createElement('div');
+          thumbDiv.className = 'project-thumbnail';
+          const link = document.createElement('a');
+          const folderName = encodeURIComponent(it.folder || (it.href || '').replace(/\/$/, '').split('/').pop() || '');
+          link.href = `project_thumbnail.html?folder=${folderName}`;
+          const img = document.createElement('img');
+          const thumbSrc = resolveThumb(it);
+          if (thumbSrc) img.src = thumbSrc;
+          img.alt = it.title || it.folder || '';
+          link.appendChild(img);
+          thumbDiv.appendChild(link);
+
+          //Header
+          const header = document.createElement('div');
+          header.className = 'project-header';
+          const h2 = document.createElement('h2');
+          h2.textContent = it.title;
+          const year = document.createElement('div');
+          year.className = 'year';
+          year.textContent = it.year;
+          header.appendChild(h2);
+          header.appendChild(year);
+
+          projectEl.appendChild(thumbDiv);
+          projectEl.appendChild(header);
+          container.appendChild(projectEl);
+        });
+      } catch (err) {
+        console.warn(err);
+        container.innerHTML = '<p style="font-style:italic;text-align:center;margin:60px auto;">Kan projecten niet laden.</p>';
+      }
+    })();
+  </script>
 
 </body>
 
