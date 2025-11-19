@@ -57,12 +57,18 @@
     .project .project-header h2 {
       font-size: 18px;
       margin: 0px;
+      font-style: normal;
     }
 
     .project .project-header .year {
       font-size: 14px;
     }
 
+    .notbold {
+      font-weight: normal
+    }
+
+    ​
     /* responsive: single column on small screens */
     @media (max-width: 900px) {
       #projects-container {
@@ -99,15 +105,13 @@
       <div class="nav-right">
         <ul>
           <li><a href="mailto:vlasblauw@info.be">
-              <img class="social"
-                src="images/icons/icons8-mail-96.png">
+              <img class="social" src="images/icons/icons8-mail-96.png">
             </a></li>
           <li><a href="https://www.instagram.com/vlasblauw/">
               <img class="social" style="height:20px" src="images/icons/icons8-instagram-26.png">
             </a></li>
           <li><a href="https://www.facebook.com/vlasblauw/">
-              <img class="social"
-                src="images/icons/icons8-facebook-96.png">
+              <img class="social" src="images/icons/icons8-facebook-96.png">
             </a></li>
         </ul>
       </div>
@@ -175,7 +179,20 @@
           const header = document.createElement('div');
           header.className = 'project-header';
           const h2 = document.createElement('h2');
-          h2.textContent = it.title;
+          const titleText = String(it.title);
+          for (const ch of titleText) {
+            const span = document.createElement('span');
+            if (/\p{N}/u.test(ch)) { // number
+              span.style.fontWeight = '200';
+              span.textContent = ch;
+            } else if (/\p{L}/u.test(ch)) { // letter
+              span.style.fontWeight = '700';
+              span.textContent = ch;
+            } else { // punctuation/space/etc
+              span.textContent = ch;
+            }
+            h2.appendChild(span);
+          }
           const year = document.createElement('div');
           year.className = 'year';
           year.textContent = it.year;
