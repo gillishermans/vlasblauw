@@ -15,7 +15,7 @@ body {
     max-width: 1050px;
     margin: auto;
     text-align: left;
-    margin-top: 100px;
+    margin-top: 125px;
     margin-bottom: 100px;
 }
 
@@ -59,7 +59,7 @@ body {
 .topnav {
     background-color: #ffffff;
     overflow: hidden;
-    padding: 6px 6px;
+    padding: 20px 6px 25px 6px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -84,7 +84,7 @@ body {
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 25px;
     overflow: visible;
 }
 
@@ -108,6 +108,7 @@ body {
     width: auto;
     position: relative;
     right: 16px;
+    top: 0px;
 }
 
 /*Style the links inside the navigation bar */
