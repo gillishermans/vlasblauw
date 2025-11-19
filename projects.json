@@ -1,5 +1,19 @@
 [
     {
+        "folder": "2507BWL",
+        "thumbnail": "BWL_1.jpeg",
+        "images": [
+            "BWL_1.jpeg",
+            "BWL_2.jpeg",
+            "BWL_3.jpeg",
+            "BWL_4.jpeg"
+        ],
+        "title": "2507BWL",
+        "year": "Leuven, 2024",
+        "description": ".",
+        "href": "projects/2507BWL/"
+    },
+    {
         "folder": "bars",
         "thumbnail": "bars1.jpeg",
         "images": [

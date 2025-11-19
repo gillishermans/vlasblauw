@@ -8,13 +8,15 @@ body {
     /* vlasblauw kleur 1b2c3e */
     font-family: 'Roboto Flex';
     text-align: center;
+    font-weight: 200;
 }
 
 .text_block {
     max-width: 1050px;
     margin: auto;
     text-align: left;
-    margin-top: 100px;
+    margin-top: 125px;
+    margin-bottom: 100px;
 }
 
 .text_block h1 {
@@ -24,8 +26,9 @@ body {
 }
 
 .text_block p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.0;
+    font-weight: 200;
 }
 
 /* Two-column layout for .text_block */
@@ -56,7 +59,7 @@ body {
 .topnav {
     background-color: #ffffff;
     overflow: hidden;
-    padding: 6px 6px;
+    padding: 20px 6px 25px 6px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -81,7 +84,7 @@ body {
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 25px;
     overflow: visible;
 }
 
@@ -105,6 +108,7 @@ body {
     width: auto;
     position: relative;
     right: 16px;
+    top: 0px;
 }
 
 /*Style the links inside the navigation bar */
