@@ -37,22 +37,25 @@ body {
     gap: 40px;
     padding: 10px 0px;
     align-items: flex-start;
-    justify-content: space-between;
+    box-sizing: border-box;
 }
 
-.text_block .text-left {
-    flex: 1 1 50%;
-    text-align: left;
-}
-
+.text_block .text-left,
 .text_block .text-right {
-    flex: 0 0 50%;
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
+/* image fills its column height/width while preserving aspect ratio
+   object-fit: cover will crop if needed so the image matches the text box */
+.text_block .text-left img,
 .text_block .text-right img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 375px);
+  object-fit: cover;
 }
 
 /* Navigation bar style */
