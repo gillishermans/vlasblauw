@@ -1,5 +1,21 @@
 [
     {
+        "title": "2511ACI",
+        "thumbnail": "ACI_1.png",
+        "images": [
+            "ACI_1.png",
+            "ACI_2.jpg",
+            "ACI_3.jpg",
+            "ACI_4.jpg",
+            "ACI_5.jpg"
+        ],
+        "year": "Leuven, 2025",
+        "description_nl": "Innovatief Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
+        "description_en": "Innovative Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
+        "task": "Collaboration",
+        "credits": ""
+    },
+    {
         "title": "2507BWL",
         "thumbnail": "BWL_1.jpeg",
         "images": [
@@ -76,6 +92,139 @@
         "description_en": "Scenography for 'Idle Hour' by Motus murmuri",
         "task": "Design and Execution",
         "credits": "Maïm Dedeene"
+    },
+    {
+        "title": "2503RTA",
+        "thumbnail": "RTA_1.jpeg",
+        "images": [
+            "RTA_1.jpeg",
+            "RTA_2.jpeg",
+            "RTA_3.jpeg",
+            "RTA_4.jpeg"
+        ],
+        "year": "Leuven, 2025",
+        "description_nl": "Laswerk voor Timme Afschrift",
+        "description_en": "Welding for Timme Afschrift",
+        "task": "Execution",
+        "credits": "Jan De Wilde"
+    },
+    {
+        "title": "2502ACM",
+        "thumbnail": "ACM_1.jpeg",
+        "images": [
+            "ACM_1.jpeg",
+            "ACM_2.png",
+            "ACM_3.jpeg"
+        ],
+        "year": "Kapellen, 2025",
+        "description_nl": "Scenographie i.o. Cirque Mecanique voor 'Auf|Bruch' door Common Ground",
+        "description_en": "Scenography for Cirque Mecanique for 'Auf|Bruch' by Common Ground",
+        "task": "Design and Execution",
+        "credits": "?"
+    },
+    {
+        "title": "2501BSD",
+        "thumbnail": "BSD_1.jpg",
+        "images": [
+            "BSD_1.jpg",
+            "BSD_2.jpeg",
+            "BSD_3.jpeg"
+        ],
+        "year": "Leuven, 2025",
+        "description_nl": "'Keverkruk' door Daan De Wit",
+        "description_en": "'Beetle Stool' by Daan De Wit",
+        "task": "Execution",
+        "credits": "Daan De Wit"
+    },
+    {
+        "title": "2411WRC",
+        "thumbnail": "WRC_1.jpeg",
+        "images": [
+            "WRC_1.jpeg",
+            "WRC_2.jpeg",
+            "WRC_3.jpeg",
+            "WRC_4.jpeg"
+        ],
+        "year": "Leuven, 2024",
+        "description_nl": "'Floor One' voor Wachrijcollectief",
+        "description_en": "'Floor One' by Wachrijcollectief",
+        "task": "Collaboration",
+        "credits": "Vincent Dankaerts"
+    },
+    {
+        "title": "2411TAC",
+        "thumbnail": "TAC_1.jpg",
+        "images": [
+            "TAC_1.jpg",
+            "TAC_2.jpeg",
+            "TAC_3.jpg"
+        ],
+        "year": "Herent, 2024",
+        "description_nl": "Tafelframe voor Atelier Circuler",
+        "description_en": "Table Frame for Atelier Circuler",
+        "task": "Execution",
+        "credits": "Atelier Circuler"
+    },
+    {
+        "title": "2408ILV",
+        "thumbnail": "ILV_1.jpeg",
+        "images": [
+            "ILV_1.jpeg",
+            "ILV_2.jpeg",
+            "ILV_3.jpeg",
+            "ILV_4.jpeg"
+        ],
+        "year": "Leuven, 2024",
+        "description_nl": "Winkelinrichting voor buurtwerk 't Lampeke vzw met melamine leggers van Atelier Circuler. Ontwerp door Czaar Architecten",
+        "description_en": "Shop furnishing for 't Lampeke vzw with melamine shelves from Atelier Circuler. Design by Czaar Architects",
+        "task": "Execution",
+        "credits": ""
+    },
+    {
+        "title": "2407TSV",
+        "thumbnail": "TSV_1.jpg",
+        "images": [
+            "TSV_1.jpg",
+            "TSV_2.jpg",
+            "TSV_3.jpeg",
+            "TSV_4.jpeg"
+        ],
+        "year": "Lovenjoel, 2024",
+        "description_nl": "Dissel aanhangwagen",
+        "description_en": "Trailer Tongue",
+        "task": "Execution",
+        "credits": ""
+    },
+    {
+        "title": "2402TAS",
+        "thumbnail": "TAS_1.jpeg",
+        "images": [
+            "TAS_1.jpeg",
+            "TAS_2.jpeg",
+            "TAS_3.jpeg",
+            "TAS_4.jpeg"
+        ],
+        "year": "Leuven, 2024",
+        "description_nl": "Tafelframe voor August Smessaert",
+        "description_en": "Table Frame for August Smessaert",
+        "task": "Execution",
+        "credits": ""
+    },
+    {
+        "title": "2309BOD",
+        "thumbnail": "BOD_1.jpeg",
+        "images": [
+            "BOD_1.jpeg",
+            "BOD_2.jpeg",
+            "BOD_3.jpeg",
+            "BOD_4.jpeg",
+            "BOD_5.jpeg"
+        ],
+        "year": "Sint-Joris-Weert, 2023",
+        "description_nl": "Balustrade voor gerecupereerde gietijzeren panelen",
+        "description_en": "Balustrade for recycled cast iron panels",
+        "task": "Design and Execution",
+        "credits": ""
     }
     
 ]
