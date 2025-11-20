@@ -1,81 +1,5 @@
 [
     {
-        "title": "2511ACI",
-        "thumbnail": "ACI_1.png",
-        "images": [
-            "ACI_1.png",
-            "ACI_2.jpg",
-            "ACI_3.jpg",
-            "ACI_4.jpg",
-            "ACI_5.jpg"
-        ],
-        "year": "Leuven, 2025",
-        "description_nl": "Innovatief Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
-        "description_en": "Innovative Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
-        "task": "Collaboration",
-        "credits": ""
-    },
-    {
-        "title": "2507BWL",
-        "thumbnail": "BWL_1.jpeg",
-        "images": [
-            "BWL_1.jpeg",
-            "BWL_2.jpeg",
-            "BWL_3.jpeg",
-            "BWL_4.jpeg"
-        ],
-        "year": "Leuven, 2025",
-        "description_nl": " 'Zomertank 2025: Born to be Wild' door Line Boogaerts, Ditmar Goes en Mei-Lan NG i.o. Werktank met steun van Stad Leuven en Vlaamse Overheid",
-        "description_en": " 'Zomertank 2025: Born to be Wild' by Line Boogaerts, Ditmar Goes en Mei-Lan NG for Werktank supported by Stad Leuven and Vlaamse Overheid",
-        "task": "Collaboration",
-        "credits": "Sophie Deforce"
-    },
-    {
-        "title": "2506SLS",
-        "thumbnail": "SLS_1.jpeg",
-        "images": [
-            "SLS_1.jpeg",
-            "SLS_2.png",
-            "SLS_3.jpg",
-            "SLS_4.jpg",
-            "SLS_5.jpg"
-        ],
-        "year": "Tildonk, 2025",
-        "description_nl": "Work In Progress: Vierdelige trapconstructie met gerecupereerde eik van Atelier Circuler",
-        "description_en": "Work In Progress: Four-section stair construction with recycled oak from Atelier Circuler",
-        "task": "Design and Execution",
-        "credits": ""
-    },
-    {
-        "title": "2505OTA",
-        "thumbnail": "OTA_1.jpeg",
-        "images": [
-            "OTA_1.jpeg",
-            "OTA_2.jpeg",
-            "OTA_3.jpeg",
-            "OTA_4.jpeg"
-        ],
-        "year": "Leuven, 2025",
-        "description_nl": "Laswerk voor Timme Afschrift",
-        "description_en": "Welding for Timme Afschrift",
-        "task": "Execution",
-        "credits": "Jan De Wilde"
-    },
-    {
-        "title": "2504PKS",
-        "thumbnail": "PKS_1.jpg",
-        "images": [
-            "PKS_1.jpg",
-            "PKS_2.jpg",
-            "PKS_3.jpg"
-        ],
-        "year": "Antwerp, 2025",
-        "description_nl": "Aluminium Tas Design door Kamilla Szemere",
-        "description_en": "Aluminium Bag Design by Kamilla Szemere",
-        "task": "Collaboration",
-        "credits": "Kamilla Szemere"
-    },
-    {
         "title": "2504IHS",
         "thumbnail": "IHS_1.jpg",
         "images": [
@@ -94,19 +18,80 @@
         "credits": "Maïm Dedeene"
     },
     {
-        "title": "2503RTA",
-        "thumbnail": "RTA_1.jpeg",
+        "title": "2505OTA",
+        "thumbnail": "OTA_1.jpeg",
         "images": [
-            "RTA_1.jpeg",
-            "RTA_2.jpeg",
-            "RTA_3.jpeg",
-            "RTA_4.jpeg"
+            "OTA_1.jpeg",
+            "OTA_2.jpeg",
+            "OTA_3.jpeg",
+            "OTA_4.jpeg"
         ],
         "year": "Leuven, 2025",
         "description_nl": "Laswerk voor Timme Afschrift",
         "description_en": "Welding for Timme Afschrift",
         "task": "Execution",
         "credits": "Jan De Wilde"
+    },
+    {
+        "title": "2309BOD",
+        "thumbnail": "BOD_1.jpeg",
+        "images": [
+            "BOD_1.jpeg",
+            "BOD_2.jpeg",
+            "BOD_3.jpeg",
+            "BOD_4.jpeg",
+            "BOD_5.jpeg"
+        ],
+        "year": "Sint-Joris-Weert, 2023",
+        "description_nl": "Balustrade voor gerecupereerde gietijzeren panelen",
+        "description_en": "Balustrade for recycled cast iron panels",
+        "task": "Design and Execution",
+        "credits": ""
+    },
+    {
+        "title": "2506SLS",
+        "thumbnail": "SLS_1.jpeg",
+        "images": [
+            "SLS_1.jpeg",
+            "SLS_2.png",
+            "SLS_3.jpg",
+            "SLS_4.jpg",
+            "SLS_5.jpg"
+        ],
+        "year": "Tildonk, 2025",
+        "description_nl": "Work In Progress: Vierdelige trapconstructie met gerecupereerde eik van Atelier Circuler",
+        "description_en": "Work In Progress: Four-section stair construction with recycled oak from Atelier Circuler",
+        "task": "Design and Execution",
+        "credits": ""
+    },
+    {
+        "title": "2504PKS",
+        "thumbnail": "PKS_1.jpg",
+        "images": [
+            "PKS_1.jpg",
+            "PKS_2.jpg",
+            "PKS_3.jpg"
+        ],
+        "year": "Antwerp, 2025",
+        "description_nl": "Aluminium Tas Design door Kamilla Szemere",
+        "description_en": "Aluminium Bag Design by Kamilla Szemere",
+        "task": "Collaboration",
+        "credits": "Kamilla Szemere"
+    },
+    {
+        "title": "2507BWL",
+        "thumbnail": "BWL_1.jpeg",
+        "images": [
+            "BWL_1.jpeg",
+            "BWL_2.jpeg",
+            "BWL_3.jpeg",
+            "BWL_4.jpeg"
+        ],
+        "year": "Leuven, 2025",
+        "description_nl": " 'Zomertank 2025: Born to be Wild' door Line Boogaerts, Ditmar Goes en Mei-Lan NG i.o. Werktank met steun van Stad Leuven en Vlaamse Overheid",
+        "description_en": " 'Zomertank 2025: Born to be Wild' by Line Boogaerts, Ditmar Goes en Mei-Lan NG for Werktank supported by Stad Leuven and Vlaamse Overheid",
+        "task": "Collaboration",
+        "credits": "Sophie Deforce"
     },
     {
         "title": "2502ACM",
@@ -135,6 +120,21 @@
         "description_en": "'Beetle Stool' by Daan De Wit",
         "task": "Execution",
         "credits": "Daan De Wit"
+    },
+    {
+        "title": "2503RTA",
+        "thumbnail": "RTA_1.jpeg",
+        "images": [
+            "RTA_1.jpeg",
+            "RTA_2.jpeg",
+            "RTA_3.jpeg",
+            "RTA_4.jpeg"
+        ],
+        "year": "Leuven, 2025",
+        "description_nl": "Laswerk voor Timme Afschrift",
+        "description_en": "Welding for Timme Afschrift",
+        "task": "Execution",
+        "credits": "Jan De Wilde"
     },
     {
         "title": "2411WRC",
@@ -211,19 +211,19 @@
         "credits": ""
     },
     {
-        "title": "2309BOD",
-        "thumbnail": "BOD_1.jpeg",
+        "title": "2511ACI",
+        "thumbnail": "ACI_1.png",
         "images": [
-            "BOD_1.jpeg",
-            "BOD_2.jpeg",
-            "BOD_3.jpeg",
-            "BOD_4.jpeg",
-            "BOD_5.jpeg"
+            "ACI_1.png",
+            "ACI_2.jpg",
+            "ACI_3.jpg",
+            "ACI_4.jpg",
+            "ACI_5.jpg"
         ],
-        "year": "Sint-Joris-Weert, 2023",
-        "description_nl": "Balustrade voor gerecupereerde gietijzeren panelen",
-        "description_en": "Balustrade for recycled cast iron panels",
-        "task": "Design and Execution",
+        "year": "Leuven, 2025",
+        "description_nl": "Innovatief Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
+        "description_en": "Innovative Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
+        "task": "Collaboration",
         "credits": ""
     }
     
