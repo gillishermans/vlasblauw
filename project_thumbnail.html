@@ -8,15 +8,6 @@
   <title>Project</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    p {
-      max-width: 1075px;
-      margin: 0px auto 0px auto;
-      font-size: 16px;
-      line-height: 1;
-      color: #333;
-      text-align: left;
-    }
-
     button {
       background-color: white;
       color: black;
@@ -34,18 +25,49 @@
       margin: 125px auto 0 auto;
     }
 
+    .project-top {
+      display: inline-block;
+    }
+
     .project-header {
       max-width: 1075px;
-      margin: auto;
+      margin: 0px auto 0px auto;
       display: flex;
       gap: 12px;
       align-items: baseline;
+      justify-content: space-between;
+      position: relative;
     }
 
     .project-header h2 {
       font-size: 24px;
       line-height: 1;
       color: black;
+    }
+
+    .project-description{
+      max-width: 1075px;
+      margin: 0px auto 20px auto;
+    }
+
+    .project-description p {
+      max-width: 1075px;
+      margin: 0px auto 10px auto;
+      font-size: 14px;
+      line-height: 1;
+      color: #333;
+      text-align: left;
+    }
+
+    .project-tasks {
+      max-width: 1075px;
+      margin: 0px auto 0px auto;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #444;
+      text-align: left;
+      position: relative;
+      bottom: 20px;
     }
 
     .project-header #year {
@@ -55,16 +77,21 @@
       color: #666;
     }
 
+    .credits {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #555;
+      text-align: left;
+    }
+
     .project-thumbnail {
       max-width: 1075px;
-      margin: 12px auto 8px auto;
+      margin: 12px auto 0px auto;
       max-height: 650px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding-bottom: 12px;
     }
 
     .project-thumbnail .thumb-wrap img {
@@ -72,29 +99,7 @@
       width: auto;
       height: auto;
       display: block;
-      margin: 0 auto;
-    }
-
-    .project-thumbnail .img-nav {
-      position: relative;
-      display: inline-flex;
-      justify-content: center;
-      color: black;
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
-      margin: 0 6px;
-      pointer-events: auto;
-      font-size: 30px;
-      overflow: hidden;
-    }
-
-    .project-thumbnail .img-nav.prev {
-      left: 8px;
-    }
-
-    .project-thumbnail .img-nav.next {
-      right: 8px;
+      margin: 0px auto 0px auto;;
     }
 
     .project-gallery {
@@ -182,16 +187,29 @@
     <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Next →</button>
   </div>
 
+  <div class="project-top">
   <div id="project-thumbnail" class="project-thumbnail">
     <div id= "thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
   </div>
 
+  <div id = "credits" class="credits">
+    credits
+  </div>
+
   <div class="project-header">
-    <h2 id="project-title">Project</h2>
+    <h2 id="project-title"></h2>
     <div id="year">2025</div>
   </div>
-  <p id="descriptionNL">description</p>
-  <p id="descriptionEN" style="font-style: italic">description</p>
+  <div id="tasks" class="project-tasks">
+  </div>
+  <div class="project-description">
+    <p id="descriptionNL">description</p>
+    <p id="descriptionEN" style="font-style: italic">description</p>
+  </div>
+
+  <hr>
+
+  </div>
 
   <div id="project-gallery" class="project-gallery"></div>
 
@@ -214,8 +232,8 @@
       const galleryElement = document.getElementById('project-gallery');
       const prevBtn = document.getElementById('prev-project');
       const nextBtn = document.getElementById('next-project');
-      const imgPrev = document.getElementById('img-prev');
-      const imgNext = document.getElementById('img-next');
+      const creditsElement = document.getElementById('credits');
+      const tasksElement = document.getElementById('tasks');
 
       if (!folder) {
         galleryElement.innerHTML = '<p>No project specified.</p>';
@@ -276,10 +294,26 @@
       }
 
       //Set title/year/description/images from json manifest if available
-      titleElement.textContent = entry.title;
+      //titleElement.textContent = entry.title;
+      const titleText = String(entry.title);
+          for (const ch of titleText) {
+            const span = document.createElement('span');
+            if (/\p{N}/u.test(ch)) { // number
+              span.style.fontWeight = '200';
+              span.textContent = ch;
+            } else if (/\p{L}/u.test(ch)) { // letter
+              span.style.fontWeight = '700';
+              span.textContent = ch;
+            } else { // punctuation/space/etc
+              span.textContent = ch;
+            }
+            titleElement.appendChild(span);
+          }
       yearElement.textContent = entry.year;
       descriptionNLElement.textContent = entry.description_nl;
       descriptionENElement.textContent = entry.description_en;
+      creditsElement.textContent = entry.credits;
+      tasksElement.innerHTML = entry.task;
       let images = entry.images;
 
       //Add project folder path to images if absolute path not specified
