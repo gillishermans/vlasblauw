@@ -45,7 +45,7 @@
       color: black;
     }
 
-    .project-description{
+    .project-description {
       max-width: 1075px;
       margin: 0px auto 20px auto;
     }
@@ -99,7 +99,8 @@
       width: auto;
       height: auto;
       display: block;
-      margin: 0px auto 0px auto;;
+      margin: 0px auto 0px auto;
+      ;
     }
 
     .project-gallery {
@@ -116,7 +117,7 @@
 
     .project-gallery .gallery-item {
       max-height: 650px;
-      max-width: 1075px; 
+      max-width: 1075px;
       width: auto;
       height: auto;
       display: flex;
@@ -126,9 +127,9 @@
 
     .project-gallery .gallery-item img {
       max-height: 650px;
-      max-width: 1075px; 
-      width: auto;        
-      height: auto;             
+      max-width: 1075px;
+      width: auto;
+      height: auto;
       display: block;
       object-fit: contain;
     }
@@ -153,7 +154,6 @@
       }
 
     }
-
   </style>
 </head>
 
@@ -188,26 +188,24 @@
   </div>
 
   <div class="project-top">
-  <div id="project-thumbnail" class="project-thumbnail">
-    <div id= "thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
-  </div>
+    <div id="project-thumbnail" class="project-thumbnail">
+      <div id="thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
+    </div>
 
-  <div id = "credits" class="credits">
-    credits
-  </div>
+    <div id="credits" class="credits"></div>
 
-  <div class="project-header">
-    <h2 id="project-title"></h2>
-    <div id="year">2025</div>
-  </div>
-  <div id="tasks" class="project-tasks">
-  </div>
-  <div class="project-description">
-    <p id="descriptionNL">description</p>
-    <p id="descriptionEN" style="font-style: italic">description</p>
-  </div>
+    <div class="project-header">
+      <h2 id="project-title"></h2>
+      <div id="year"></div>
+    </div>
+    <div id="tasks" class="project-tasks">
+    </div>
+    <div class="project-description">
+      <p id="descriptionNL"></p>
+      <p id="descriptionEN" style="font-style: italic"></p>
+    </div>
 
-  <hr>
+    <hr>
 
   </div>
 
@@ -296,19 +294,19 @@
       //Set title/year/description/images from json manifest if available
       //titleElement.textContent = entry.title;
       const titleText = String(entry.title);
-          for (const ch of titleText) {
-            const span = document.createElement('span');
-            if (/\p{N}/u.test(ch)) { // number
-              span.style.fontWeight = '200';
-              span.textContent = ch;
-            } else if (/\p{L}/u.test(ch)) { // letter
-              span.style.fontWeight = '700';
-              span.textContent = ch;
-            } else { // punctuation/space/etc
-              span.textContent = ch;
-            }
-            titleElement.appendChild(span);
-          }
+      for (const ch of titleText) {
+        const span = document.createElement('span');
+        if (/\p{N}/u.test(ch)) { // number
+          span.style.fontWeight = '200';
+          span.textContent = ch;
+        } else if (/\p{L}/u.test(ch)) { // letter
+          span.style.fontWeight = '700';
+          span.textContent = ch;
+        } else { // punctuation/space/etc
+          span.textContent = ch;
+        }
+        titleElement.appendChild(span);
+      }
       yearElement.textContent = entry.year;
       descriptionNLElement.textContent = entry.description_nl;
       descriptionENElement.textContent = entry.description_en;
