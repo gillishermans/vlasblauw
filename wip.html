@@ -97,8 +97,8 @@
         <ul>
           <li><a href="vlasblauw.html" ><img class="logo" src="images/logo-nowhites.jpg" alt="Vlasblauw Logo"></a></li>
           <li><a class="link" href="vlasblauw.html">vlasblauw</a></li>
-          <li><a class="active" href="#">projects</a></li>
-          <li><a class="link" href="wip.html">in progress</a></li>
+          <li><a class="link" href="index.html">projects</a></li>
+          <li><a class="active" href="wip.html">in progress</a></li>
           <li><a class="link" href="contact.html">contact</a></li>
         </ul>
       </div>
@@ -137,20 +137,20 @@
       function resolveThumb(it) {
         let t = String(it.thumbnail || '').trim();
         const looksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(t);
-        const hasProjectsPrefix = t.startsWith('projects/');
+        const hasProjectsPrefix = t.startsWith('inprogress/');
         if (!t) {
           //Fallback to first image of images array if present
           if (Array.isArray(it.images) && it.images.length) t = it.images[0];
         }
         if (!t) return '';
         if (looksAbsolute || hasProjectsPrefix) return t.replace(/^\/+/, '');
-        const base = `projects/${it.title}/`;
+        const base = `inprogress/${it.title}/`;
         return joinPath(base, t);
       }
 
       try {
-        const res = await fetch('./projects.json', { cache: 'no-cache' });
-        if (!res.ok) throw new Error('projects.json not found');
+        const res = await fetch('./inprogress.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('inprogress.json not found');
         const items = await res.json();
         if (!Array.isArray(items) || !items.length) {
           container.innerHTML = '<p style="font-style:italic;text-align:center;margin:60px auto;">Kan projecten niet laden.</p>';
@@ -167,7 +167,7 @@
           thumbDiv.className = 'project-thumbnail';
           const link = document.createElement('a');
           const folderName = encodeURIComponent(it.title.replace(/\/$/, '').split('/').pop() || '');
-          link.href = `project.html?folder=${folderName}`;
+          link.href = `inprogress.html?folder=${folderName}`;
           const img = document.createElement('img');
           const thumbSrc = resolveThumb(it);
           if (thumbSrc) img.src = thumbSrc;

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+  <title>in progress</title>
   <link rel="stylesheet" href="style.css">
   <style>
     button {
@@ -201,8 +201,8 @@
         <ul>
           <li><a href="vlasblauw.html"><img class="logo" src="images/logo-nowhites.jpg" alt="Vlasblauw Logo"></a></li>
           <li><a class="link" href="vlasblauw.html">vlasblauw</a></li>
-          <li><a class="active" href="index.html">projects</a></li>
-          <li><a class="link" href="wip.html">in progress</a></li>
+          <li><a class="link" href="index.html">projects</a></li>
+          <li><a class="active" href="wip.html">in progress</a></li>
           <li><a class="link" href="contact.html">contact</a></li>
         </ul>
       </div>
@@ -299,7 +299,7 @@
       //Load full manifest
       let manifest = [];
       try {
-        const res = await fetch('./projects.json', { cache: 'no-cache' });
+        const res = await fetch('./inprogress.json', { cache: 'no-cache' });
         if (res.ok) manifest = await res.json();
       } catch (e) { manifest = []; }
       const manifestIndex = Array.isArray(manifest)
@@ -315,23 +315,23 @@
         if (manifestIndex > 0) {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex - 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.title)}`;
+            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
           });
         } else {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifest.length - 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.title)}`;
+            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
           });
         }
         if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
           nextBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex + 1];
-            location.href = `project.html?folder=${encodeURIComponent(target.title)}`;
+            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
           });
         } else {
           nextBtn.addEventListener('click', () => {
             const target = manifest[0];
-            location.href = `project.html?folder=${encodeURIComponent(target.title)}`;
+            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
           });
         }
       }
@@ -369,11 +369,11 @@
       images = images.map(img => {
         img = String(img || '').trim();
         const looksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(img);
-        const hasProjectsPrefix = img.startsWith('projects/');
+        const hasProjectsPrefix = img.startsWith('inprogress/');
         if (looksAbsolute || hasProjectsPrefix) {
           return img.replace(/^\/+/, '');
         }
-        const base = `projects/${entry.title}/`;
+        const base = `inprogress/${entry.title}/`;
         return joinPath(base, img);
       });
 

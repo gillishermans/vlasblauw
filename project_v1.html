@@ -4,12 +4,13 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project</title>
   <link rel="stylesheet" href="style.css">
   <style>
     p {
       max-width: 1075px;
-       margin: 0px auto 0px auto;
+       margin: 0px auto 100px auto;
       font-size: 16px;
       line-height: 1;
       color: #333;
@@ -73,7 +74,7 @@
 
     .project-gallery {
       max-width: 1075px;
-      margin: 20px auto 100px auto;
+      margin: 20px auto 0px auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
@@ -95,7 +96,7 @@
         <ul>
           <li><img class="logo" src="/images/logo_nowhites.jpg" alt="Vlasblauw Logo"></li>
           <li><a href="vlasblauw.html">vlasblauw</a></li>
-          <li><a class="active" href="index.html">projecten</a></li>
+          <li><a class="active" href="index.html">projects</a></li>
           <li><a href="contact.html">contact</a></li>
         </ul>
       </div>
@@ -113,20 +114,20 @@
   </div>
 
   <div class="buttons">
-    <button id="prev-project" type="button" aria-label="Vorig project">← Vorig project</button>
-    <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Volgend project
+    <button id="prev-project" type="button" aria-label="Previous">← previous project</button>
+    <button id="next-project" type="button" aria-label="Next" style="padding-right: 15px;">next project
       →</button>
   </div>
 
-  <div id="project-thumbnail" class="project-thumbnail"></div>
+  <!-- <div id="project-thumbnail" class="project-thumbnail"></div> -->
+
+  <div id="project-gallery" class="project-gallery"></div>
 
   <div class="project-header">
     <h2 id="project-title">Project</h2>
     <div id="year">2025</div>
   </div>
   <p id="description">description</p>
-
-  <div id="project-gallery" class="project-gallery"></div>
 
   <div class="bottomnav">
     <div class="nav-container">
@@ -141,7 +142,7 @@
       const titleElement = document.getElementById('project-title');
       const yearElement = document.getElementById('year');
       const descriptionElement = document.getElementById('description');
-      const thumbnailElement = document.getElementById('project-thumbnail');
+      //const thumbnailElement = document.getElementById('project-thumbnail');
       const galleryElement = document.getElementById('project-gallery');
       const prevBtn = document.getElementById('prev-project');
       const nextBtn = document.getElementById('next-project');
@@ -180,23 +181,23 @@
         if (manifestIndex > 0) {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex - 1];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
           });
         } else {
           prevBtn.addEventListener('click', () => {
             const target = manifest[manifest.length - 1];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
           });
         }
         if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
           nextBtn.addEventListener('click', () => {
             const target = manifest[manifestIndex + 1];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
           });
         } else {
           nextBtn.addEventListener('click', () => {
             const target = manifest[0];
-            location.href = `project_thumbnail.html?folder=${encodeURIComponent(target.folder)}`;
+            location.href = `project.html?folder=${encodeURIComponent(target.folder)}`;
           });
         }
       }
@@ -232,9 +233,9 @@
       }
 
       //Add image to thumbnail
-      const src = joinPath(entry.href, entry.thumbnail);
-      const safe = src.replace(/^\/+/, '');
-      thumbnailElement.innerHTML = `<img src="${safe}" alt="">`;
+      //const src = joinPath(entry.href, entry.thumbnail);
+      //const safe = src.replace(/^\/+/, '');
+      //thumbnailElement.innerHTML = `<img src="${safe}" alt="">`;
 
       //Add images to gallery
       galleryElement.innerHTML = images.map(src => {

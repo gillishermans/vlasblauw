@@ -49,22 +49,6 @@
         "credits": ""
     },
     {
-        "title": "2506SLS",
-        "thumbnail": "SLS_1.jpeg",
-        "images": [
-            "SLS_1.jpeg",
-            "SLS_2.png",
-            "SLS_3.jpg",
-            "SLS_4.jpg",
-            "SLS_5.jpg"
-        ],
-        "year": "Tildonk, 2025",
-        "description_nl": "Work In Progress: Vierdelige trapconstructie met gerecupereerde eik van Atelier Circuler",
-        "description_en": "Work In Progress: Four-section stair construction with recycled oak from Atelier Circuler",
-        "task": "Design and Execution",
-        "credits": ""
-    },
-    {
         "title": "2504PKS",
         "thumbnail": "PKS_1.jpg",
         "images": [
@@ -208,22 +192,6 @@
         "description_nl": "Tafelframe voor August Smessaert",
         "description_en": "Table Frame for August Smessaert",
         "task": "Execution",
-        "credits": ""
-    },
-    {
-        "title": "2511ACI",
-        "thumbnail": "ACI_1.png",
-        "images": [
-            "ACI_1.png",
-            "ACI_2.jpg",
-            "ACI_3.jpg",
-            "ACI_4.jpg",
-            "ACI_5.jpg"
-        ],
-        "year": "Leuven, 2025",
-        "description_nl": "Innovatief Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
-        "description_en": "Innovative Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
-        "task": "Collaboration",
         "credits": ""
     }
     
