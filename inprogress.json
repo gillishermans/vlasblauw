@@ -9,11 +9,19 @@
             "SLS_4.jpg",
             "SLS_5.jpg"
         ],
+        "credits": "jon & bert",
         "year": "Tildonk, 2025",
         "description_nl": "Work In Progress: Vierdelige trapconstructie met gerecupereerde eik van Atelier Circuler",
         "description_en": "Work In Progress: Four-section stair construction with recycled oak from Atelier Circuler",
         "task": "Design and Execution",
-        "credits": ""
+        "videos": [
+            "SLS_6.mov",
+            "SLS_7.MP4"
+        ],
+        "video_credits": [
+            "jon",
+            "bert"
+        ]
     },
     {
         "title": "2511ACI",
@@ -25,11 +33,12 @@
             "ACI_4.jpg",
             "ACI_5.jpg"
         ],
+        "credits": "",
         "year": "Leuven, 2025",
         "description_nl": "Innovatief Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
         "description_en": "Innovative Partner Project door Ief Spincemaille met Palettes (KU Leuven), SOM, SchoolpodiumWest, Z33",
         "task": "Collaboration",
-        "credits": ""
+        "videos": [],
+        "video_credits": []
     }
-
 ]

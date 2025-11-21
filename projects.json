@@ -11,11 +11,21 @@
             "IHS_6.jpg",
             "IHS_7.jpg"
         ],
+        "credits": [
+            "Maïm Dedeene",
+            "Maïm Dedeene",
+            "Maïm Dedeene",
+            "Maïm Dedeene",
+            "Maïm Dedeene",
+            "Maïm Dedeene",
+            "Maïm Dedeene"
+        ],
         "year": "Monthey, 2025",
         "description_nl": "Scenographie voor 'Idle Hour' door Motus murmuri",
         "description_en": "Scenography for 'Idle Hour' by Motus murmuri",
         "task": "Design and Execution",
-        "credits": "Maïm Dedeene"
+        "videos": [],
+        "video_credits": []
     },
     {
         "title": "2505OTA",
@@ -89,7 +99,7 @@
         "description_nl": "Scenographie i.o. Cirque Mecanique voor 'Auf|Bruch' door Common Ground",
         "description_en": "Scenography for Cirque Mecanique for 'Auf|Bruch' by Common Ground",
         "task": "Design and Execution",
-        "credits": "?"
+        "credits": ""
     },
     {
         "title": "2501BSD",
