@@ -12,13 +12,13 @@ body {
 }
 
 .privacy-link {
-    display: flex;
+    display: block;
     position: relative;
     bottom: 40px;
     color: black;
     padding: 6px 10px;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 11px;
     text-decoration: italic;
     z-index: 9999;
     text-align: right;
