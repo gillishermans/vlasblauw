@@ -99,12 +99,15 @@ body {
     display: block;
 }
 
-.topnav .social {
-    height: 22px;
-    width: auto;
+.topnav .sociala {
     position: relative;
     right: 16px;
     top: 11px;
+}
+
+.topnav .social {
+    height: 22px;
+    width: auto;
 }
 
 .topnav .link {
@@ -235,11 +238,15 @@ body {
         height: 28px;
     }
 
+    .topnav .sociala {
+        position: relative;
+        right: 12px;
+        top: 5px;
+    }
+
     .topnav .social {
         height: 16px;
-        right: 12px;
         width: auto;
-        top: 5px;
         margin: 0 3px;
     }
 
