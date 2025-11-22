@@ -9,7 +9,7 @@
             "SLS_4.jpg",
             "SLS_5.jpg"
         ],
-        "credits": "jon & bert",
+        "credits": "",
         "year": "Tildonk, 2025",
         "description_nl": "Work In Progress: Vierdelige trapconstructie met gerecupereerde eik van Atelier Circuler",
         "description_en": "Work In Progress: Four-section stair construction with recycled oak from Atelier Circuler",
@@ -18,10 +18,7 @@
             "SLS_6.mov",
             "SLS_7.MP4"
         ],
-        "video_credits": [
-            "jon",
-            "bert"
-        ]
+        "video_credits": ""
     },
     {
         "title": "2511ACI",

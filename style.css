@@ -201,7 +201,7 @@ body {
 
 @media (max-width: 600px) {
     .topnav {
-        padding: 8px 3px;
+        padding: 4px 3px 8px 3px;
     }
     .topnav .nav-container {
         padding: 6px 4px;
