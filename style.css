@@ -104,7 +104,7 @@ body {
     width: auto;
     position: relative;
     right: 16px;
-    top: 0px;
+    top: 11px;
 }
 
 .topnav .link {
@@ -181,10 +181,11 @@ body {
     }
 
     .topnav .social {
-        height: 14px;
-        right: 6px;
+        height: 16px;
+        right: 12px;
         width: auto;
-        top: 4px;
+        top: 5px;
+        margin: 0 3px;
     }
 
     .topnav ul {
