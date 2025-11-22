@@ -465,28 +465,28 @@ button {
 
     .topnav .sociala {
         position: relative;
-        right: 12px;
+        right: 14px;
         top: 5px;
     }
 
     .topnav .social {
-        height: 16px;
+        height: 17px;
         width: auto;
         margin: 0 3px;
     }
 
     .topnav ul {
-        gap: 4px;
+        gap: 5px;
     }
 
     .topnav .link {
-        font-size: 12px;
+        font-size: 12.5px;
         top: 2px;
         padding: 18px 4px;
     }
 
     .topnav a.active {
-        font-size: 12px;
+        font-size: 12.5px;
         top: 2px;
         padding: 18px 4px;
         background-size: 8px;
