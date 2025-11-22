@@ -11,6 +11,24 @@ body {
     font-weight: 200;
 }
 
+.privacy-link {
+    display: flex;
+    position: relative;
+    bottom: 40px;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: italic;
+    z-index: 9999;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.privacy-link:hover {
+    opacity: 0.5;
+}
+
 /* Text block for vlasblauw/contact/privacy policy */
 .text_block {
     max-width: 1050px;
@@ -505,6 +523,11 @@ button {
         justify-content: center;
     }
 
+    .text_block p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
     /* Top Navigation */
     .topnav {
         padding: 4px 3px 8px 3px;
@@ -579,6 +602,10 @@ button {
     .bottomnav p {
         color: white;
         font-size: 11px;
+    }
+
+    .bottomnav ul {
+        gap: 10px;
     }
 
     .bottomnav .sociala {
