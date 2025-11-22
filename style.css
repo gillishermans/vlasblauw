@@ -225,6 +225,231 @@ body {
     font-weight: normal
 }
 
+button {
+      background-color: white;
+      color: black;
+      font-family: 'Roboto Flex';
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .buttons {
+      max-width: 1075px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 125px auto 0 auto;
+    }
+
+    .project-top {
+      display: inline-block;
+    }
+
+    .project-header {
+      max-width: 1075px;
+      margin: 0px auto 0px auto;
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .project-header h2 {
+      font-size: 24px;
+      line-height: 1;
+      color: black;
+    }
+
+    .project-description {
+      max-width: 1075px;
+      margin: 0px auto 20px auto;
+    }
+
+    .project-description p {
+      max-width: 1075px;
+      margin: 0px auto 10px auto;
+      font-size: 14px;
+      line-height: 1;
+      color: #333;
+      text-align: left;
+    }
+
+    .project-tasks {
+      max-width: 1075px;
+      margin: 0px auto 0px auto;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #444;
+      text-align: left;
+      position: relative;
+      bottom: 20px;
+    }
+
+    .project-header #year {
+      margin: 0 0 0 8px;
+      font-size: 16px;
+      line-height: 1;
+      color: #666;
+    }
+
+    .credits {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #555;
+      text-align: right;
+    }
+
+    .project-thumbnail {
+      max-width: 1075px;
+      margin: 12px auto 0px auto;
+      max-height: 650px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-thumbnail .thumb-wrap img {
+      max-height: 650px;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0px auto 0px auto;
+    }
+
+    .project-gallery {
+      max-width: 1075px;
+      margin: 20px auto 100px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-gallery .gallery-item {
+      width: auto;
+      height: auto;
+    }
+
+    /* credit text under each gallery image */
+    .project-gallery .gallery-item .gallery-credit {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #555;
+      text-align: right;
+    }
+
+    .project-gallery .gallery-item img {
+      max-height: 650px;
+      max-width: 1075px;
+      width: auto;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      cursor: zoom-in;
+    }
+
+    /* Lightbox / fullscreen viewer */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 10000;
+      padding: 20px;
+    }
+
+    .lightbox[aria-hidden="false"] {
+      display: flex;
+    }
+
+    .lightbox .lb-inner {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: none;
+      /* allow custom pinch / pan handling */
+    }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 95vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      cursor: grab;
+      transform-origin: center center;
+      will-change: transform;
+      transition: transform 120ms ease-out;
+    }
+
+    .lightbox img:active {
+      cursor: grabbing;
+    }
+
+    .lightbox .sr-only {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+
+    .project-videos {
+      max-width: 1075px;
+      margin: 12px auto 24px auto;
+      padding: 0 12px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .project-videos .video-item {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .project-videos .video-item .img-wrap {
+      display: inline-block;
+      /* shrinkwrap to video width so credit aligns */
+      text-align: right;
+    }
+
+    .project-videos video {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 60vh;
+      background: #000;
+    }
+
+    .project-videos .video-credit {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 1.2;
+      color: #666;
+      text-align: right;
+      white-space: nowrap;
+    }
+
 @media (max-width: 600px) {
     .topnav {
         padding: 4px 3px 8px 3px;
@@ -379,6 +604,105 @@ body {
         width: 100%;
         bottom: 16px;
     }
+
+    .buttons {
+        margin: 60px auto 0 auto;
+        padding: 0 10px;
+      }
+
+      button {
+        font-size: 10px;
+      }
+
+      .credits {
+        font-size: 10px;
+        margin: 0px auto 0px auto;
+        bottom: 10px;
+        position: relative;
+      }
+
+      .project-thumbnail {
+        width: 85vw;
+        height: auto;
+        margin: 8px auto 0px auto;
+      }
+
+      .project-thumbnail .thumb-wrap img {
+        width: 85vw;
+        height: auto;
+        object-fit: cover;
+        margin: 0px auto 0px auto;
+        ;
+      }
+
+      .project-header {
+        margin: 0px auto 0px auto;
+        position: relative;
+        bottom: 10px;
+      }
+
+      .project-header h2 {
+        font-size: 18px;
+      }
+
+      .project-description {
+        margin: 0px auto 20px auto;
+      }
+
+      .project-description p {
+        margin: 0px auto 10px auto;
+        font-size: 14px;
+        line-height: 1;
+        color: #333;
+        text-align: left;
+      }
+
+      .project-tasks {
+        margin: 0px auto 0px auto;
+        font-size: 10px;
+      }
+
+      .project-header #year {
+        font-size: 13px;
+      }
+
+      .project-gallery {
+        max-width: 85vw;
+      }
+
+      .project-gallery .gallery-item {
+        max-width: 85vw;
+        max-height: 85vh;
+        width: auto;
+        height: auto;
+        margin-bottom: 30px;
+      }
+
+      .project-gallery .gallery-item .gallery-credit {
+        font-size: 10px;
+      }
+
+      .project-gallery .gallery-item img {
+        width: auto;
+        height: auto;
+        max-width: 85vw;
+        max-height: 85vh;
+      }
+
+      .project-videos {
+        max-width: 85vw;
+        margin: 12px auto 24px auto;
+        padding: 0 0px;
+      }
+
+      .project-videos video {
+        max-width: 85vw;
+      }
+
+      .project-videos .video-credit {
+        font-size: 10px;
+        line-height: 0.2;
+      }
 
     /* optional: tighter spacing on very small screens */
     @media (max-width: 480px) {
