@@ -3,827 +3,840 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto Flex' rel='stylesheet'>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>in progress</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    button {
-      background-color: white;
-      color: black;
-      font-family: 'Roboto Flex';
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in progress</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button {
+            background-color: white;
+            color: black;
+            font-family: 'Roboto Flex';
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-    .buttons {
-      max-width: 1075px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 125px auto 0 auto;
-    }
+        .buttons {
+            max-width: 1075px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 125px auto 0 auto;
+        }
 
-    .project-top {
-      display: inline-block;
-    }
+        .project-top {
+            display: inline-block;
+        }
 
-    .project-header {
-      max-width: 1075px;
-      margin: 0px auto 0px auto;
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
-      justify-content: space-between;
-      position: relative;
-    }
+        .project-header {
+            max-width: 1075px;
+            margin: 0px auto 0px auto;
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+            justify-content: space-between;
+            position: relative;
+        }
 
-    .project-header h2 {
-      font-size: 24px;
-      line-height: 1;
-      color: black;
-    }
+        .project-header h2 {
+            font-size: 24px;
+            line-height: 1;
+            color: black;
+        }
 
-    .project-description {
-      max-width: 1075px;
-      margin: 0px auto 20px auto;
-    }
+        .project-description {
+            max-width: 1075px;
+            margin: 0px auto 20px auto;
+        }
 
-    .project-description p {
-      max-width: 1075px;
-      margin: 0px auto 10px auto;
-      font-size: 14px;
-      line-height: 1;
-      color: #333;
-      text-align: left;
-    }
+        .project-description p {
+            max-width: 1075px;
+            margin: 0px auto 10px auto;
+            font-size: 14px;
+            line-height: 1;
+            color: #333;
+            text-align: left;
+        }
 
-    .project-tasks {
-      max-width: 1075px;
-      margin: 0px auto 0px auto;
-      font-size: 12px;
-      line-height: 1.4;
-      color: #444;
-      text-align: left;
-      position: relative;
-      bottom: 20px;
-    }
+        .project-tasks {
+            max-width: 1075px;
+            margin: 0px auto 0px auto;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #444;
+            text-align: left;
+            position: relative;
+            bottom: 20px;
+        }
 
-    .project-header #year {
-      margin: 0 0 0 8px;
-      font-size: 16px;
-      line-height: 1;
-      color: #666;
-    }
+        .project-header #year {
+            margin: 0 0 0 8px;
+            font-size: 16px;
+            line-height: 1;
+            color: #666;
+        }
 
-    .credits {
-      font-size: 12px;
-      line-height: 1.4;
-      color: #555;
-      text-align: right;
-    }
+        .credits {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #555;
+            text-align: right;
+        }
 
-    .project-thumbnail {
-      max-width: 1075px;
-      margin: 12px auto 0px auto;
-      max-height: 650px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .project-thumbnail {
+            max-width: 1075px;
+            margin: 12px auto 0px auto;
+            max-height: 650px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .project-thumbnail .thumb-wrap img {
-      max-height: 650px;
-      width: auto;
-      height: auto;
-      display: block;
-      margin: 0px auto 0px auto;
-    }
+        .project-thumbnail .thumb-wrap img {
+            max-height: 650px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0px auto 0px auto;
+        }
 
-    .project-gallery {
-      max-width: 1075px;
-      margin: 20px auto 100px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-    }
+        .project-gallery {
+            max-width: 1075px;
+            margin: 20px auto 100px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .project-gallery .gallery-item {
-      width: auto;
-      height: auto;
-    }
+        .project-gallery .gallery-item {
+            width: auto;
+            height: auto;
+        }
 
-    /* credit text under each gallery image */
-    .project-gallery .gallery-item .gallery-credit {
-      margin-top: 0px;
-      margin-bottom: 10px;
-      font-size: 12px;
-      line-height: 1.4;
-      color: #555;
-      text-align: right;
-    }
+        /* credit text under each gallery image */
+        .project-gallery .gallery-item .gallery-credit {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #555;
+            text-align: right;
+        }
 
-    .project-gallery .gallery-item img {
-      max-height: 650px;
-      max-width: 1075px;
-      width: auto;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      cursor: zoom-in;
-    }
+        .project-gallery .gallery-item img {
+            max-height: 650px;
+            max-width: 1075px;
+            width: auto;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
 
-    /* Lightbox / fullscreen viewer */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 10000;
-      padding: 20px;
-    }
+        /* Lightbox / fullscreen viewer */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            padding: 20px;
+        }
 
-    .lightbox[aria-hidden="false"] {
-      display: flex;
-    }
+        .lightbox[aria-hidden="false"] {
+            display: flex;
+        }
 
-    .lightbox .lb-inner {
-      position: relative;
-      max-width: 100%;
-      max-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      touch-action: none;
-      /* allow custom pinch / pan handling */
-    }
+        .lightbox .lb-inner {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: none;
+            /* allow custom pinch / pan handling */
+        }
 
-    .lightbox img {
-      max-width: 95vw;
-      max-height: 95vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      cursor: grab;
-      transform-origin: center center;
-      will-change: transform;
-      transition: transform 120ms ease-out;
-    }
+        .lightbox img {
+            max-width: 95vw;
+            max-height: 95vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            cursor: grab;
+            transform-origin: center center;
+            will-change: transform;
+            transition: transform 120ms ease-out;
+        }
 
-    .lightbox img:active {
-      cursor: grabbing;
-    }
+        .lightbox img:active {
+            cursor: grabbing;
+        }
 
-    .lightbox .sr-only {
-      position: absolute !important;
-      height: 1px;
-      width: 1px;
-      overflow: hidden;
-      clip: rect(1px, 1px, 1px, 1px);
-      white-space: nowrap;
-    }
+        .lightbox .sr-only {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
 
-    .project-videos {
-      max-width: 1075px;
-      margin: 12px auto 24px auto;
-      padding: 0 12px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      align-items: center;
-    }
+        .project-videos {
+            max-width: 1075px;
+            margin: 12px auto 24px auto;
+            padding: 0 12px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+        }
 
-    .project-videos .video-item {
-      display: block;
-      text-align: center;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
+        .project-videos .video-item {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
 
-    .project-videos .video-item .img-wrap {
-      display: inline-block;
-      /* shrinkwrap to video width so credit aligns */
-      text-align: right;
-    }
+        .project-videos .video-item .img-wrap {
+            display: inline-block;
+            /* shrinkwrap to video width so credit aligns */
+            text-align: right;
+        }
 
-    .project-videos video {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: 95vw;
-      max-height: 60vh;
-      background: #000;
-    }
+        .project-videos video {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 95vw;
+            max-height: 60vh;
+            background: #000;
+        }
 
-    .project-videos .video-credit {
-      display: block;
-      margin-top: 6px;
-      font-size: 12px;
-      line-height: 1.2;
-      color: #666;
-      text-align: right;
-      white-space: nowrap;
-    }
+        .project-videos .video-credit {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            line-height: 1.2;
+            color: #666;
+            text-align: right;
+            white-space: nowrap;
+        }
 
-    @media (max-width: 600px) {
-      .buttons {
-        margin: 60px auto 0 auto;
-        padding: 0 10px;
-      }
+        @media (max-width: 600px) {
+            .buttons {
+                margin: 60px auto 0 auto;
+                padding: 0 10px;
+            }
 
-      button {
-        font-size: 10px;
-      }
+            button {
+                font-size: 10px;
+            }
 
-      .project-thumbnail .thumb-wrap img {
-        width: 85vw;
-        height: 85vw;
-      }
+            .project-thumbnail .thumb-wrap img {
+                width: 85vw;
+                height: 85vw;
+            }
 
-      .credits {
-        font-size: 10px;
-        margin: 0px auto 0px auto;
-        bottom: 10px;
-        position: relative;
-      }
+            .credits {
+                font-size: 10px;
+                margin: 0px auto 0px auto;
+                bottom: 10px;
+                position: relative;
+            }
 
-      .project-thumbnail {
-        width: 85vw;
-        height: 85vw;
-        margin: 8px auto 0px auto;
-      }
+            .project-thumbnail {
+                width: 85vw;
+                height: 85vw;
+                margin: 8px auto 0px auto;
+            }
 
-      .project-thumbnail .thumb-wrap img {
-        width: 85vw;
-        height: 85vw;
-        object-fit: cover;
-        margin: 0px auto 0px auto;
-        ;
-      }
+            .project-thumbnail .thumb-wrap img {
+                width: 85vw;
+                height: 85vw;
+                object-fit: cover;
+                margin: 0px auto 0px auto;
+                ;
+            }
 
-      .project-header {
-        margin: 0px auto 0px auto;
-        position: relative;
-        bottom: 10px;
-      }
+            .project-header {
+                margin: 0px auto 0px auto;
+                position: relative;
+                bottom: 10px;
+            }
 
-      .project-header h2 {
-        font-size: 18px;
-      }
+            .project-header h2 {
+                font-size: 18px;
+            }
 
-      .project-description {
-        margin: 0px auto 20px auto;
-      }
+            .project-description {
+                margin: 0px auto 20px auto;
+            }
 
-      .project-description p {
-        margin: 0px auto 10px auto;
-        font-size: 14px;
-        line-height: 1;
-        color: #333;
-        text-align: left;
-      }
+            .project-description p {
+                margin: 0px auto 10px auto;
+                font-size: 14px;
+                line-height: 1;
+                color: #333;
+                text-align: left;
+            }
 
-      .project-tasks {
-        margin: 0px auto 0px auto;
-        font-size: 10px;
-      }
+            .project-tasks {
+                margin: 0px auto 0px auto;
+                font-size: 10px;
+            }
 
-      .project-header #year {
-        font-size: 13px;
-      }
+            .project-header #year {
+                font-size: 13px;
+            }
 
-      .project-gallery {
-        max-width: 85vw;
-        margin: 20px auto 100px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-      }
+            .project-gallery {
+                max-width: 85vw;
+            }
 
-      .project-gallery .gallery-item {
-        max-width: 85vw;
-        max-height: 85vh;
-        width: auto;
-        height: auto;
-        margin-bottom: 30px;
-      }
+            .project-gallery .gallery-item {
+                max-width: 85vw;
+                max-height: 85vh;
+                width: auto;
+                height: auto;
+                margin-bottom: 30px;
+            }
 
-      /* credit text under each gallery image */
-      .project-gallery .gallery-item .gallery-credit {
-        font-size: 10px;
-        line-height: 1.4;
-        color: #555;
-        text-align: right;
-      }
+            .project-gallery .gallery-item .gallery-credit {
+                font-size: 10px;
+            }
 
-      .project-gallery .gallery-item img {
-        width: auto;
-        height: auto;
-        max-width: 85vw;
-        max-height: 85vh;
-        display: block;
-        object-fit: contain;
-        cursor: zoom-in;
-      }
-    }
-  </style>
+            .project-gallery .gallery-item img {
+                width: auto;
+                height: auto;
+                max-width: 85vw;
+                max-height: 85vh;
+            }
+
+            .project-videos {
+                max-width: 85vw;
+                margin: 12px auto 24px auto;
+                padding: 0 0px;
+            }
+
+            .project-videos video {
+                max-width: 85vw;
+            }
+
+            .project-videos .video-credit {
+                font-size: 10px;
+                line-height: 0.2;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="topnav">
-    <div class="nav-container">
-      <div class="nav-left">
-        <ul>
-          <li><a href="vlasblauw.html"><img class="logo" src="images/logo-nowhites.jpg" alt="Vlasblauw Logo"></a></li>
-          <li><a class="link" href="vlasblauw.html">vlasblauw</a></li>
-          <li><a class="link" href="index.html">projects</a></li>
-          <li><a class="active" href="wip.html">in progress</a></li>
-          <li><a class="link" href="contact.html">contact</a></li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <ul>
-          <li><a href="mailto:info@vlasblauw.be">
-              <img class="social" src="images/icons/icons8-mail-96.png">
-            </a></li>
-          <li><a href="https://www.instagram.com/vlasblauw/">
-              <img class="social" style="height:20px" src="images/icons/icons8-instagram-26.png">
-            </a></li>
-          <li><a href="https://www.facebook.com/vlasblauw/">
-              <img class="social" src="images/icons/icons8-facebook-96.png">
-            </a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <button id="prev-project" type="button" aria-label="Vorig project">← Previous</button>
-    <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Next →</button>
-  </div>
-
-  <div class="project-top">
-    <div id="project-thumbnail" class="project-thumbnail">
-      <div id="thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
+    <div class="topnav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <ul>
+                    <li><a href="vlasblauw.html"><img class="logo" src="images/logo-nowhites.jpg"
+                                alt="Vlasblauw Logo"></a></li>
+                    <li><a class="link" href="vlasblauw.html">vlasblauw</a></li>
+                    <li><a class="link" href="index.html">projects</a></li>
+                    <li><a class="active" href="wip.html">in progress</a></li>
+                    <li><a class="link" href="contact.html">contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="mailto:info@vlasblauw.be">
+                            <img class="social" src="images/icons/icons8-mail-96.png">
+                        </a></li>
+                    <li><a href="https://www.instagram.com/vlasblauw/">
+                            <img class="social" style="height:20px" src="images/icons/icons8-instagram-26.png">
+                        </a></li>
+                    <li><a href="https://www.facebook.com/vlasblauw/">
+                            <img class="social" src="images/icons/icons8-facebook-96.png">
+                        </a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div id="credits" class="credits"></div>
-
-    <div class="project-header">
-      <h2 id="project-title"></h2>
-      <div id="year"></div>
-    </div>
-    <div id="tasks" class="project-tasks">
-    </div>
-    <div class="project-description">
-      <p id="descriptionNL"></p>
-      <p id="descriptionEN" style="font-style: italic"></p>
+    <div class="buttons">
+        <button id="prev-project" type="button" aria-label="Vorig project">← Previous</button>
+        <button id="next-project" type="button" aria-label="Volgend project" style="padding-right: 15px;">Next
+            →</button>
     </div>
 
-    <hr>
+    <div class="project-top">
+        <div id="project-thumbnail" class="project-thumbnail">
+            <div id="thumb-wrap" class="thumb-wrap" aria-live="polite"></div>
+        </div>
 
-  </div>
+        <div id="credits" class="credits"></div>
 
-  <div id="project-videos" class="project-videos"></div>
+        <div class="project-header">
+            <h2 id="project-title"></h2>
+            <div id="year"></div>
+        </div>
+        <div id="tasks" class="project-tasks">
+        </div>
+        <div class="project-description">
+            <p id="descriptionNL"></p>
+            <p id="descriptionEN" style="font-style: italic"></p>
+        </div>
 
-  <div id="project-gallery" class="project-gallery"></div>
+        <hr>
 
-  <!-- Lightbox overlay -->
-  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
-    <div class="lb-inner" id="lb-inner">
-      <img id="lightbox-img" src="" alt="">
     </div>
-  </div>
 
-  <div class="bottomnav">
-    <div class="nav-container">
-      <p>info@vlasblauw.be | +32491047057</p>
+    <div id="project-videos" class="project-videos"></div>
+
+    <div id="project-gallery" class="project-gallery"></div>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+        <div class="lb-inner" id="lb-inner">
+            <img id="lightbox-img" src="" alt="">
+        </div>
     </div>
-  </div>
 
-  <script>
-    (async function () {
-      const params = new URLSearchParams(location.search);
-      const folder = params.get('folder');
-      const titleElement = document.getElementById('project-title');
-      const yearElement = document.getElementById('year');
-      const descriptionNLElement = document.getElementById('descriptionNL');
-      const descriptionENElement = document.getElementById('descriptionEN');
-      const thumbnailElement = document.getElementById('project-thumbnail');
-      const thumbnailImageElement = document.getElementById('thumb-wrap');
-      const galleryElement = document.getElementById('project-gallery');
-      const prevBtn = document.getElementById('prev-project');
-      const nextBtn = document.getElementById('next-project');
-      const creditsElement = document.getElementById('credits');
-      const tasksElement = document.getElementById('tasks');
+    <div class="bottomnav">
+        <div class="nav-container">
+            <p>info@vlasblauw.be | +32491047057</p>
+        </div>
+    </div>
 
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      const lbInner = document.getElementById('lb-inner');
+    <script>
+        (async function () {
+            const params = new URLSearchParams(location.search);
+            const folder = params.get('folder');
+            const titleElement = document.getElementById('project-title');
+            const yearElement = document.getElementById('year');
+            const descriptionNLElement = document.getElementById('descriptionNL');
+            const descriptionENElement = document.getElementById('descriptionEN');
+            const thumbnailElement = document.getElementById('project-thumbnail');
+            const thumbnailImageElement = document.getElementById('thumb-wrap');
+            const galleryElement = document.getElementById('project-gallery');
+            const prevBtn = document.getElementById('prev-project');
+            const nextBtn = document.getElementById('next-project');
+            const creditsElement = document.getElementById('credits');
+            const tasksElement = document.getElementById('tasks');
 
-      if (!folder) {
-        galleryElement.innerHTML = '<p>No project specified.</p>';
-        return;
-      }
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lbInner = document.getElementById('lb-inner');
 
-      const decodedFolder = decodeURIComponent(folder);
+            if (!folder) {
+                galleryElement.innerHTML = '<p>No project specified.</p>';
+                return;
+            }
 
-      //Joins the path to form absolute path
-      function joinPath(a, b) {
-        return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
-      }
+            const decodedFolder = decodeURIComponent(folder);
 
-      //Load full manifest
-      let manifest = [];
-      try {
-        const res = await fetch('./inprogress.json', { cache: 'no-cache' });
-        if (res.ok) manifest = await res.json();
-      } catch (e) { manifest = []; }
-      const manifestIndex = Array.isArray(manifest)
-        ? manifest.findIndex(it =>
-          it.title === decodedFolder)
-        : -1;
+            //Joins the path to form absolute path
+            function joinPath(a, b) {
+                return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
+            }
 
-      //Get the entry from manifest based on computed index  
-      const entry = manifestIndex !== -1 && Array.isArray(manifest) ? manifest[manifestIndex] : null;
+            //Load full manifest
+            let manifest = [];
+            try {
+                const res = await fetch('./inprogress.json', { cache: 'no-cache' });
+                if (res.ok) manifest = await res.json();
+            } catch (e) { manifest = []; }
+            const manifestIndex = Array.isArray(manifest)
+                ? manifest.findIndex(it =>
+                    it.title === decodedFolder)
+                : -1;
 
-      //Setup previous and next buttons
-      if (prevBtn && nextBtn) {
-        if (manifestIndex > 0) {
-          prevBtn.addEventListener('click', () => {
-            const target = manifest[manifestIndex - 1];
-            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
-          });
-        } else {
-          prevBtn.addEventListener('click', () => {
-            const target = manifest[manifest.length - 1];
-            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
-          });
-        }
-        if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
-          nextBtn.addEventListener('click', () => {
-            const target = manifest[manifestIndex + 1];
-            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
-          });
-        } else {
-          nextBtn.addEventListener('click', () => {
-            const target = manifest[0];
-            location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
-          });
-        }
-      }
+            //Get the entry from manifest based on computed index  
+            const entry = manifestIndex !== -1 && Array.isArray(manifest) ? manifest[manifestIndex] : null;
 
-      //If no entry found in manifest display message
-      if (!entry) {
-        galleryElement.innerHTML = `<p style="font-style:italic;text-align:center; margin:100px auto auto;>Project "${decodedFolder}" niet gevonden in manifest.</p>`;
-        return;
-      }
+            //Setup previous and next buttons
+            if (prevBtn && nextBtn) {
+                if (manifestIndex > 0) {
+                    prevBtn.addEventListener('click', () => {
+                        const target = manifest[manifestIndex - 1];
+                        location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
+                    });
+                } else {
+                    prevBtn.addEventListener('click', () => {
+                        const target = manifest[manifest.length - 1];
+                        location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
+                    });
+                }
+                if (manifestIndex !== -1 && manifestIndex < manifest.length - 1) {
+                    nextBtn.addEventListener('click', () => {
+                        const target = manifest[manifestIndex + 1];
+                        location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
+                    });
+                } else {
+                    nextBtn.addEventListener('click', () => {
+                        const target = manifest[0];
+                        location.href = `inprogress.html?folder=${encodeURIComponent(target.title)}`;
+                    });
+                }
+            }
 
-      //Set title/year/description/images from json manifest if available
-      //titleElement.textContent = entry.title;
-      const titleText = String(entry.title);
-      for (const ch of titleText) {
-        const span = document.createElement('span');
-        if (/\p{N}/u.test(ch)) { // number
-          span.style.fontWeight = '200';
-          span.textContent = ch;
-        } else if (/\p{L}/u.test(ch)) { // letter
-          span.style.fontWeight = '700';
-          span.textContent = ch;
-        } else { // punctuation/space/etc
-          span.textContent = ch;
-        }
-        titleElement.appendChild(span);
-      }
-      yearElement.textContent = entry.year;
-      descriptionNLElement.textContent = entry.description_nl;
-      descriptionENElement.textContent = entry.description_en;
-      creditsElement.textContent = entry.credits;
-      tasksElement.innerHTML = entry.task;
-      let images = entry.images;
+            //If no entry found in manifest display message
+            if (!entry) {
+                galleryElement.innerHTML = `<p style="font-style:italic;text-align:center; margin:100px auto auto;>Project "${decodedFolder}" niet gevonden in manifest.</p>`;
+                return;
+            }
 
-      //Add project folder path to images if absolute path not specified
-      images = images.map(img => {
-        img = String(img || '').trim();
-        const looksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(img);
-        const hasProjectsPrefix = img.startsWith('inprogress/');
-        if (looksAbsolute || hasProjectsPrefix) {
-          return img.replace(/^\/+/, '');
-        }
-        const base = `inprogress/${entry.title}/`;
-        return joinPath(base, img);
-      });
+            //Set title/year/description/images from json manifest if available
+            //titleElement.textContent = entry.title;
+            const titleText = String(entry.title);
+            for (const ch of titleText) {
+                const span = document.createElement('span');
+                if (/\p{N}/u.test(ch)) { // number
+                    span.style.fontWeight = '200';
+                    span.textContent = ch;
+                } else if (/\p{L}/u.test(ch)) { // letter
+                    span.style.fontWeight = '700';
+                    span.textContent = ch;
+                } else { // punctuation/space/etc
+                    span.textContent = ch;
+                }
+                titleElement.appendChild(span);
+            }
+            yearElement.textContent = entry.year;
+            descriptionNLElement.textContent = entry.description_nl;
+            descriptionENElement.textContent = entry.description_en;
+            creditsElement.textContent = entry.credits;
+            tasksElement.innerHTML = entry.task;
+            let images = entry.images;
 
-      //If no images found for project display message
-      if (!images.length) {
-        galleryElement.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;">Geen afbeeldingen gevonden voor dit project.</p>';
-        return;
-      }
+            //Add project folder path to images if absolute path not specified
+            images = images.map(img => {
+                img = String(img || '').trim();
+                const looksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(img);
+                const hasProjectsPrefix = img.startsWith('inprogress/');
+                if (looksAbsolute || hasProjectsPrefix) {
+                    return img.replace(/^\/+/, '');
+                }
+                const base = `inprogress/${entry.title}/`;
+                return joinPath(base, img);
+            });
 
-      // open lightbox with a given image src (no index controls)
-      function openLightboxWithSrc(src) {
-        if (!src) return;
-        lightboxImg.src = String(src).replace(/^\/+/, '');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-        resetZoom();
-      }
+            //If no images found for project display message
+            if (!images.length) {
+                galleryElement.innerHTML = '<p style="font-style:italic;text-align:center; margin:100px auto auto;">Geen afbeeldingen gevonden voor dit project.</p>';
+                return;
+            }
 
-      function closeLightbox() {
-        lightbox.setAttribute('aria-hidden', 'true');
-        lightboxImg.src = '';
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-        resetZoom();
-      }
+            // open lightbox with a given image src (no index controls)
+            function openLightboxWithSrc(src) {
+                if (!src) return;
+                lightboxImg.src = String(src).replace(/^\/+/, '');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.documentElement.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden';
+                resetZoom();
+            }
 
-      // open fullscreen for clicked gallery image (no index nav)
-      galleryElement.addEventListener('click', (e) => {
-        const item = e.target.closest('.gallery-item');
-        if (!item) return;
-        const imgEl = item.querySelector('img');
-        if (!imgEl) return;
-        openLightboxWithSrc(imgEl.src || imgEl.getAttribute('src'));
-      });
+            function closeLightbox() {
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImg.src = '';
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                resetZoom();
+            }
 
-      // make thumbnail click open current thumbnail image in fullscreen
-      thumbnailImageElement.addEventListener('click', () => {
-        const timg = thumbnailImageElement.querySelector('img');
-        if (timg) openLightboxWithSrc(timg.src || timg.getAttribute('src'));
-      });
+            // open fullscreen for clicked gallery image (no index nav)
+            galleryElement.addEventListener('click', (e) => {
+                const item = e.target.closest('.gallery-item');
+                if (!item) return;
+                const imgEl = item.querySelector('img');
+                if (!imgEl) return;
+                openLightboxWithSrc(imgEl.src || imgEl.getAttribute('src'));
+            });
 
-      // lightbox controls
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox(); // click outside image closes
-      });
+            // make thumbnail click open current thumbnail image in fullscreen
+            thumbnailImageElement.addEventListener('click', () => {
+                const timg = thumbnailImageElement.querySelector('img');
+                if (timg) openLightboxWithSrc(timg.src || timg.getAttribute('src'));
+            });
 
-      // keyboard navigation when lightbox open
-      window.addEventListener('keydown', (e) => {
-        if (lightbox.getAttribute('aria-hidden') === 'false') {
-          if (e.key === 'Escape') return closeLightbox();
-        }
-      });
+            // lightbox controls
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox(); // click outside image closes
+            });
 
-      //Lighbox zoom/pan logic
-      let scale = 1;
-      const minScale = 1;
-      const maxScale = 4;
-      let translateX = 0;
-      let translateY = 0;
-      let isPanning = false;
-      let startPanX = 0;
-      let startPanY = 0;
-      let startClientX = 0;
-      let startClientY = 0;
-      //Pointers for pinch support
-      const pointers = new Map();
-      let pinchStartDist = 0;
-      let pinchStartScale = 1;
+            // keyboard navigation when lightbox open
+            window.addEventListener('keydown', (e) => {
+                if (lightbox.getAttribute('aria-hidden') === 'false') {
+                    if (e.key === 'Escape') return closeLightbox();
+                }
+            });
 
-      //Base image size (displayed at scale = 1) used for clamping pan bounds
-      let baseImgWidth = 0;
-      let baseImgHeight = 0;
+            //Lighbox zoom/pan logic
+            let scale = 1;
+            const minScale = 1;
+            const maxScale = 4;
+            let translateX = 0;
+            let translateY = 0;
+            let isPanning = false;
+            let startPanX = 0;
+            let startPanY = 0;
+            let startClientX = 0;
+            let startClientY = 0;
+            //Pointers for pinch support
+            const pointers = new Map();
+            let pinchStartDist = 0;
+            let pinchStartScale = 1;
 
-      function setTransform() {
-        //Clamp translate so the image cannot be panned beyond edges of the lightbox
-        const containerRect = lbInner.getBoundingClientRect();
-        const containerW = containerRect.width;
-        const containerH = containerRect.height;
-        const dispW = (baseImgWidth || lightboxImg.getBoundingClientRect().width) * scale;
-        const dispH = (baseImgHeight || lightboxImg.getBoundingClientRect().height) * scale;
-        const maxTX = Math.max(0, (dispW - containerW) / 2);
-        const maxTY = Math.max(0, (dispH - containerH) / 2);
-        translateX = clamp(translateX, -maxTX, maxTX);
-        translateY = clamp(translateY, -maxTY, maxTY);
-        lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-      }
-      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+            //Base image size (displayed at scale = 1) used for clamping pan bounds
+            let baseImgWidth = 0;
+            let baseImgHeight = 0;
 
-      //Measure the image's displayed size when scale === 1 so we can compute pan bounds
-      function updateBaseSize() {
-        const prevTransition = lightboxImg.style.transition;
-        const prevTransform = lightboxImg.style.transform;
-        lightboxImg.style.transition = 'none';
-        lightboxImg.style.transform = 'none';
-        const r = lightboxImg.getBoundingClientRect();
-        baseImgWidth = r.width;
-        baseImgHeight = r.height;
-        // restore transform (use setTimeout to ensure the browser updated layout)
-        requestAnimationFrame(() => {
-          lightboxImg.style.transition = prevTransition || 'transform 120ms ease-out';
-          lightboxImg.style.transform = prevTransform || '';
-          setTransform();
-        });
-      }
+            function setTransform() {
+                //Clamp translate so the image cannot be panned beyond edges of the lightbox
+                const containerRect = lbInner.getBoundingClientRect();
+                const containerW = containerRect.width;
+                const containerH = containerRect.height;
+                const dispW = (baseImgWidth || lightboxImg.getBoundingClientRect().width) * scale;
+                const dispH = (baseImgHeight || lightboxImg.getBoundingClientRect().height) * scale;
+                const maxTX = Math.max(0, (dispW - containerW) / 2);
+                const maxTY = Math.max(0, (dispH - containerH) / 2);
+                translateX = clamp(translateX, -maxTX, maxTX);
+                translateY = clamp(translateY, -maxTY, maxTY);
+                lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            }
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 
-      //Resets the zoom/pan to initial state
-      function resetZoom() {
-        scale = 1;
-        translateX = 0;
-        translateY = 0;
-        pointers.clear();
-        setTransform();
-      }
+            //Measure the image's displayed size when scale === 1 so we can compute pan bounds
+            function updateBaseSize() {
+                const prevTransition = lightboxImg.style.transition;
+                const prevTransform = lightboxImg.style.transform;
+                lightboxImg.style.transition = 'none';
+                lightboxImg.style.transform = 'none';
+                const r = lightboxImg.getBoundingClientRect();
+                baseImgWidth = r.width;
+                baseImgHeight = r.height;
+                // restore transform (use setTimeout to ensure the browser updated layout)
+                requestAnimationFrame(() => {
+                    lightboxImg.style.transition = prevTransition || 'transform 120ms ease-out';
+                    lightboxImg.style.transform = prevTransform || '';
+                    setTransform();
+                });
+            }
 
-      //Recompute base size whenever the lightbox image loads or the window resizes
-      lightboxImg.addEventListener('load', () => {
-        resetZoom();
-        updateBaseSize();
-      });
-      window.addEventListener('resize', () => {
-        if (lightbox.getAttribute('aria-hidden') === 'false') updateBaseSize();
-      });
+            //Resets the zoom/pan to initial state
+            function resetZoom() {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                pointers.clear();
+                setTransform();
+            }
 
-      //Wheel zoom (desktop)
-      lightbox.addEventListener('wheel', (e) => {
-        if (lightbox.getAttribute('aria-hidden') === 'true') return;
-        e.preventDefault();
-        const rect = lightboxImg.getBoundingClientRect();
-        const cx = e.clientX - rect.left - rect.width / 2;
-        const cy = e.clientY - rect.top - rect.height / 2;
-        const delta = -e.deltaY;
-        const zoomFactor = delta > 0 ? 1.12 : 0.9;
-        const newScale = clamp(scale * zoomFactor, minScale, maxScale);
-        // adjust translate so the pointed spot stays under cursor
-        const k = newScale / scale - 1;
-        translateX -= cx * k;
-        translateY -= cy * k;
-        scale = newScale;
-        setTransform();
-      }, { passive: false });
+            //Recompute base size whenever the lightbox image loads or the window resizes
+            lightboxImg.addEventListener('load', () => {
+                resetZoom();
+                updateBaseSize();
+            });
+            window.addEventListener('resize', () => {
+                if (lightbox.getAttribute('aria-hidden') === 'false') updateBaseSize();
+            });
 
-      //Double click toggles zoom
-      lightboxImg.addEventListener('dblclick', (e) => {
-        e.preventDefault();
-        const rect = lightboxImg.getBoundingClientRect();
-        const cx = e.clientX - rect.left - rect.width / 2;
-        const cy = e.clientY - rect.top - rect.height / 2;
-        if (scale === 1) {
-          scale = 2;
-          translateX -= cx * (2 - 1);
-          translateY -= cy * (2 - 1);
-        } else {
-          resetZoom();
-        }
-        setTransform();
-      });
+            //Wheel zoom (desktop)
+            lightbox.addEventListener('wheel', (e) => {
+                if (lightbox.getAttribute('aria-hidden') === 'true') return;
+                e.preventDefault();
+                const rect = lightboxImg.getBoundingClientRect();
+                const cx = e.clientX - rect.left - rect.width / 2;
+                const cy = e.clientY - rect.top - rect.height / 2;
+                const delta = -e.deltaY;
+                const zoomFactor = delta > 0 ? 1.12 : 0.9;
+                const newScale = clamp(scale * zoomFactor, minScale, maxScale);
+                // adjust translate so the pointed spot stays under cursor
+                const k = newScale / scale - 1;
+                translateX -= cx * k;
+                translateY -= cy * k;
+                scale = newScale;
+                setTransform();
+            }, { passive: false });
 
-      //Pointer handlers for pan and pinch
-      lbInner.addEventListener('pointerdown', (e) => {
-        lbInner.setPointerCapture(e.pointerId);
-        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-        if (pointers.size === 1 && scale > 1) {
-          isPanning = true;
-          startClientX = e.clientX;
-         startClientY = e.clientY;
-         startPanX = translateX;
-          startPanY = translateY;
-        } else if (pointers.size === 2) {
-          // start pinch
-          const ps = Array.from(pointers.values());
-          pinchStartDist = Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y);
-          pinchStartScale = scale;
-        }
-      });
+            //Double click toggles zoom
+            lightboxImg.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                const rect = lightboxImg.getBoundingClientRect();
+                const cx = e.clientX - rect.left - rect.width / 2;
+                const cy = e.clientY - rect.top - rect.height / 2;
+                if (scale === 1) {
+                    scale = 2;
+                    translateX -= cx * (2 - 1);
+                    translateY -= cy * (2 - 1);
+                } else {
+                    resetZoom();
+                }
+                setTransform();
+            });
 
-      lbInner.addEventListener('pointermove', (e) => {
-        if (!pointers.has(e.pointerId)) return;
-        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-        if (pointers.size === 1 && isPanning) {
-          translateX = startPanX + (e.clientX - startClientX);
-          translateY = startPanY + (e.clientY - startClientY);
-          setTransform();
-        } else if (pointers.size === 2) {
-          const ps = Array.from(pointers.values());
-          const dist = Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y);
-          if (pinchStartDist > 0) {
-            const newScale = clamp(pinchStartScale * (dist / pinchStartDist), minScale, maxScale);
-            // center of pinch -> keep stable
-            const rect = lightboxImg.getBoundingClientRect();
-            const cx = (ps[0].x + ps[1].x) / 2 - rect.left - rect.width / 2;
-            const cy = (ps[0].y + ps[1].y) / 2 - rect.top - rect.height / 2;
-            const k = newScale / scale - 1;
-            translateX -= cx * k;
-            translateY -= cy * k;
-            scale = newScale;
-            setTransform();
-          }
-        }
-      });
+            //Pointer handlers for pan and pinch
+            lbInner.addEventListener('pointerdown', (e) => {
+                lbInner.setPointerCapture(e.pointerId);
+                pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+                if (pointers.size === 1 && scale > 1) {
+                    isPanning = true;
+                    startClientX = e.clientX;
+                    startClientY = e.clientY;
+                    startPanX = translateX;
+                    startPanY = translateY;
+                } else if (pointers.size === 2) {
+                    // start pinch
+                    const ps = Array.from(pointers.values());
+                    pinchStartDist = Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y);
+                    pinchStartScale = scale;
+                }
+            });
 
-      lbInner.addEventListener('pointerup', (e) => {
-        lbInner.releasePointerCapture(e.pointerId);
-        pointers.delete(e.pointerId);
-        isPanning = false;
-        pinchStartDist = 0;
-      });
-      lbInner.addEventListener('pointercancel', (e) => {
-        pointers.delete(e.pointerId);
-        isPanning = false;
-        pinchStartDist = 0;
-      });
+            lbInner.addEventListener('pointermove', (e) => {
+                if (!pointers.has(e.pointerId)) return;
+                pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+                if (pointers.size === 1 && isPanning) {
+                    translateX = startPanX + (e.clientX - startClientX);
+                    translateY = startPanY + (e.clientY - startClientY);
+                    setTransform();
+                } else if (pointers.size === 2) {
+                    const ps = Array.from(pointers.values());
+                    const dist = Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y);
+                    if (pinchStartDist > 0) {
+                        const newScale = clamp(pinchStartScale * (dist / pinchStartDist), minScale, maxScale);
+                        // center of pinch -> keep stable
+                        const rect = lightboxImg.getBoundingClientRect();
+                        const cx = (ps[0].x + ps[1].x) / 2 - rect.left - rect.width / 2;
+                        const cy = (ps[0].y + ps[1].y) / 2 - rect.top - rect.height / 2;
+                        const k = newScale / scale - 1;
+                        translateX -= cx * k;
+                        translateY -= cy * k;
+                        scale = newScale;
+                        setTransform();
+                    }
+                }
+            });
 
-      //Reset zoom when closing or when image changes
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) { closeLightbox(); resetZoom(); }
-      });
-      // ensure zoom reset when image src changes
-      const obs = new MutationObserver(() => resetZoom());
-      obs.observe(lightboxImg, { attributes: true, attributeFilter: ['src'] });
+            lbInner.addEventListener('pointerup', (e) => {
+                lbInner.releasePointerCapture(e.pointerId);
+                pointers.delete(e.pointerId);
+                isPanning = false;
+                pinchStartDist = 0;
+            });
+            lbInner.addEventListener('pointercancel', (e) => {
+                pointers.delete(e.pointerId);
+                isPanning = false;
+                pinchStartDist = 0;
+            });
 
-      function resolveVideoPath(f) {
-        let s = String(f || '').trim();
-        if (!s) return '';
-        if (/^\/|^[a-zA-Z]+:\/\//.test(s) || s.startsWith('inprogress/')) return s.replace(/^\/+/, '');
-        const base = `inprogress/${entry.title}/`;
-        return joinPath(base, s);
-      }
+            //Reset zoom when closing or when image changes
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) { closeLightbox(); resetZoom(); }
+            });
+            // ensure zoom reset when image src changes
+            const obs = new MutationObserver(() => resetZoom());
+            obs.observe(lightboxImg, { attributes: true, attributeFilter: ['src'] });
 
-      function renderVideos() {
-        const videosContainer = document.getElementById('project-videos');
-        const raw = Array.isArray(entry.videos) ? entry.videos : [];
-        if (!raw.length) {
-          videosContainer.innerHTML = '';
-          return;
-        }
-        videosContainer.innerHTML = raw.map((v, idx) => {
-          let src = '', credit = entry.video_credits[idx] || '';
-          if (typeof v === 'string') {
-            src = resolveVideoPath(v);
-          } else if (v && typeof v === 'object') {
-            src = resolveVideoPath(v.src || v.file || v.url || '');
-            credit = v.credit || '';
-          }
-          if (!src) return '';
-          const creditHtml = credit ? `<div class="video-credit">${'© ' + credit}</div>` : `<div class="video-credit"></div>`;
-          return `<div class="video-item"><div class="img-wrap"><video controls preload="metadata" src="${src}"></video>${creditHtml}</div></div>`;
-        }).join('');
-      }
+            function resolveVideoPath(f) {
+                let s = String(f || '').trim();
+                if (!s) return '';
+                if (/^\/|^[a-zA-Z]+:\/\//.test(s) || s.startsWith('inprogress/')) return s.replace(/^\/+/, '');
+                const base = `inprogress/${entry.title}/`;
+                return joinPath(base, s);
+            }
 
-      renderVideos();
+            function renderVideos() {
+                const videosContainer = document.getElementById('project-videos');
+                const raw = Array.isArray(entry.videos) ? entry.videos : [];
+                if (!raw.length) {
+                    videosContainer.innerHTML = '';
+                    return;
+                }
+                videosContainer.innerHTML = raw.map((v, idx) => {
+                    let src = '';
+                    if (typeof v === 'string') {
+                        src = resolveVideoPath(v);
+                    } else if (v && typeof v === 'object') {
+                        src = resolveVideoPath(v.src || v.file || v.url || '');
+                    }
+                    if (!src) return '';
 
-      let currentIndex = 0;
+                    let rawCredit = '';
+                    if (v && typeof v === 'object' && v.credit !== undefined) {
+                        rawCredit = String(v.credit || '').trim();
+                    } else if (Array.isArray(entry.video_credits)) {
+                        rawCredit = String(entry.video_credits[idx] || '').trim();
+                    } else if (typeof entry.video_credits === 'string') {
+                        rawCredit = String(entry.video_credits).trim();
+                    }
 
-      //Render gallery excluding the currentIndex, include credits under each image
-      function renderGallery() {
-        galleryElement.innerHTML = images.map((src, idx) => {
-          if (idx === currentIndex) return '';
-          const safe = String(src).replace(/^\/+/, '');
-          // determine credit for this index; prefer per-index array entry, otherwise empty
-          let credit = '';
-          if (Array.isArray(entry.credits)) {
-            credit = String(entry.credits[idx] || '').trim();
-          } else if (typeof entry.credits === 'string') {
-            credit = String(entry.credits).trim();
-          }
-          const creditHtml = credit ? `<div class="gallery-credit">© ${credit}</div>` : '';
-          return `<div class="gallery-item" data-index="${idx}">
+                    const creditHtml = rawCredit ? `<div class="video-credit">© ${rawCredit}</div>` : '';
+                    return `<div class="video-item"><div class="img-wrap"><video controls preload="metadata" src="${src}"></video>${creditHtml}</div></div>`;
+                }).join('');
+            }
+
+            renderVideos();
+
+            let currentIndex = 0;
+
+            //Render gallery excluding the currentIndex, include credits under each image
+            function renderGallery() {
+                galleryElement.innerHTML = images.map((src, idx) => {
+                    if (idx === currentIndex) return '';
+                    const safe = String(src).replace(/^\/+/, '');
+                    //Determine credit for this index; prefer per-index array entry, otherwise empty
+                    let credit = '';
+                    if (Array.isArray(entry.credits)) {
+                        credit = String(entry.credits[idx] || '').trim();
+                    } else if (typeof entry.credits === 'string') {
+                        credit = String(entry.credits).trim();
+                    }
+                    const creditHtml = credit ? `<div class="gallery-credit">© ${credit}</div>` : '';
+                    return `<div class="gallery-item" data-index="${idx}">
                     <img src="${safe}" alt="">
                     ${creditHtml}
                   </div>`;
-        }).join('');
-      }
+                }).join('');
+            }
 
-      //Display image at given index in the thumbnail area
-      function renderIndex(i) {
-        currentIndex = ((i % images.length) + images.length) % images.length;
-        const safe = String(images[currentIndex]).replace(/^\/+/, '');
-        thumbnailImageElement.innerHTML = `<img src="${safe}" alt="">`;
-        // determine thumbnail credit for current index; show nothing when empty
-        let tcredit = '';
-        if (Array.isArray(entry.credits)) {
-          tcredit = String(entry.credits[currentIndex] || '').trim();
-        } else if (typeof entry.credits === 'string') {
-          tcredit = String(entry.credits).trim();
-        }
-        creditsElement.textContent = tcredit ? '© ' + tcredit : '';
-        renderGallery();
-      }
+            //Display image at given index in the thumbnail area
+            function renderIndex(i) {
+                currentIndex = ((i % images.length) + images.length) % images.length;
+                const safe = String(images[currentIndex]).replace(/^\/+/, '');
+                thumbnailImageElement.innerHTML = `<img src="${safe}" alt="">`;
+                //Determine thumbnail credit for current index; show nothing when empty
+                let tcredit = '';
+                if (Array.isArray(entry.credits)) {
+                    tcredit = String(entry.credits[currentIndex] || '').trim();
+                } else if (typeof entry.credits === 'string') {
+                    tcredit = String(entry.credits).trim();
+                }
+                creditsElement.textContent = tcredit ? '© ' + tcredit : '';
+                renderGallery();
+            }
 
-      //Add image to thumbnail
-      const src = joinPath(entry.href, entry.thumbnail);
-      const safe = src.replace(/^\/+/, '');
-      thumbnailImageElement.innerHTML = `<img src="${safe}" alt="">`;
-      //Mark initial index if thumbnail matches one of images (initial thumbnail not necessarily first image)
-      const matched = images.findIndex(p => p.replace(/^\/+/, '').endsWith(String(entry.thumbnail || '').replace(/^\/+/, '')));
-      currentIndex = matched !== -1 ? matched : 0;
-      renderIndex(currentIndex);
+            //Add image to thumbnail
+            const src = joinPath(entry.href, entry.thumbnail);
+            const safe = src.replace(/^\/+/, '');
+            thumbnailImageElement.innerHTML = `<img src="${safe}" alt="">`;
+            //Mark initial index if thumbnail matches one of images (initial thumbnail not necessarily first image)
+            const matched = images.findIndex(p => p.replace(/^\/+/, '').endsWith(String(entry.thumbnail || '').replace(/^\/+/, '')));
+            currentIndex = matched !== -1 ? matched : 0;
+            renderIndex(currentIndex);
 
-      // Add images to gallery (use renderGallery to keep credits logic consistent)
-      renderGallery();
-    })();
-  </script>
+            // Add images to gallery (use renderGallery to keep credits logic consistent)
+            renderGallery();
+        })();
+    </script>
 </body>
 
 </html>

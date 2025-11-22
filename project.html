@@ -302,12 +302,6 @@
 
       .project-gallery {
         max-width: 85vw;
-        margin: 20px auto 100px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
       }
 
       .project-gallery .gallery-item {
@@ -318,12 +312,8 @@
         margin-bottom: 30px;
       }
 
-      /* credit text under each gallery image */
       .project-gallery .gallery-item .gallery-credit {
         font-size: 10px;
-        line-height: 1.4;
-        color: #555;
-        text-align: right;
       }
 
       .project-gallery .gallery-item img {
@@ -331,9 +321,21 @@
         height: auto;
         max-width: 85vw;
         max-height: 85vh;
-        display: block;
-        object-fit: contain;
-        cursor: zoom-in;
+      }
+
+      .project-videos {
+        max-width: 85vw;
+        margin: 12px auto 24px auto;
+        padding: 0 0px;
+      }
+
+      .project-videos video {
+        max-width: 85vw;
+      }
+
+      .project-videos .video-credit {
+        font-size: 10px;
+        line-height: 0.2;
       }
     }
   </style>
@@ -757,15 +759,24 @@
           return;
         }
         videosContainer.innerHTML = raw.map((v, idx) => {
-          let src = '', credit = entry.video_credits[idx] || '';
+          let src = '';
           if (typeof v === 'string') {
             src = resolveVideoPath(v);
           } else if (v && typeof v === 'object') {
             src = resolveVideoPath(v.src || v.file || v.url || '');
-            credit = v.credit || '';
           }
           if (!src) return '';
-          const creditHtml = credit ? `<div class="video-credit">${'© ' + credit}</div>` : `<div class="video-credit"></div>`;
+
+          let rawCredit = '';
+          if (v && typeof v === 'object' && v.credit !== undefined) {
+            rawCredit = String(v.credit || '').trim();
+          } else if (Array.isArray(entry.video_credits)) {
+            rawCredit = String(entry.video_credits[idx] || '').trim();
+          } else if (typeof entry.video_credits === 'string') {
+            rawCredit = String(entry.video_credits).trim();
+          }
+
+          const creditHtml = rawCredit ? `<div class="video-credit">© ${rawCredit}</div>` : '';
           return `<div class="video-item"><div class="img-wrap"><video controls preload="metadata" src="${src}"></video>${creditHtml}</div></div>`;
         }).join('');
       }

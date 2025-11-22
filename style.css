@@ -31,7 +31,6 @@ body {
     font-weight: 200;
 }
 
-/* Two-column layout for .text_block */
 .text_block .text-inner {
     display: flex;
     gap: 40px;
@@ -42,23 +41,20 @@ body {
 
 .text_block .text-left,
 .text_block .text-right {
-  flex: 1 1 50%;
-  box-sizing: border-box;
-  overflow: hidden;
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* image fills its column height/width while preserving aspect ratio
-   object-fit: cover will crop if needed so the image matches the text box */
 .text_block .text-left img,
 .text_block .text-right img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
 }
 
-/* Navigation bar style */
 .topnav {
     background-color: #ffffff;
     overflow: hidden;
@@ -70,7 +66,6 @@ body {
     z-index: 9999;
 }
 
-/* inner centered container - aligns with .gallery max-width */
 .topnav .nav-container {
     max-width: 1110px;
     margin: auto;
@@ -91,7 +86,6 @@ body {
     overflow: visible;
 }
 
-/* remove legacy floats and use flex */
 .nav-left,
 .nav-right,
 .nav-left ul li,
@@ -99,7 +93,6 @@ body {
     float: none;
 }
 
-/* Logo inside topnav */
 .topnav .logo {
     height: 64px;
     width: auto;
@@ -114,7 +107,6 @@ body {
     top: 0px;
 }
 
-/*Style the links inside the navigation bar */
 .topnav .link {
     color: black;
     position: relative;
@@ -156,7 +148,6 @@ body {
     z-index: 9999;
 }
 
-/* inner centered container - aligns with .gallery max-width */
 .bottomnav .nav-container {
     background-color: #1b2c3e;
     max-width: 1075px;
@@ -176,48 +167,30 @@ body {
     margin: 0px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    max-width: 1075px;
-    margin: 100px auto 100px;
-}
-
-/* Gallery Items */
-.gallery-item {
-    overflow: hidden;
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
 @media (max-width: 600px) {
     .topnav {
         padding: 4px 3px 8px 3px;
     }
+
     .topnav .nav-container {
         padding: 6px 4px;
     }
+
     .topnav .logo {
         height: 28px;
     }
+
     .topnav .social {
         height: 14px;
         right: 6px;
         width: auto;
         top: 4px;
     }
+
     .topnav ul {
         gap: 4px;
     }
+
     .topnav .link {
         font-size: 12px;
         top: 2px;
@@ -230,22 +203,8 @@ body {
         padding: 18px 4px;
         background-size: 8px;
     }
-    .gallery {
-        margin: 60px auto 60px;
-        gap : 5px;
-    }
 
-    .gallery-item {
-        width: 100%;
-        height: auto;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-    }
-
-    .text_block{
+    .text_block {
         margin: 60px auto 60px;
         padding: 0px 10px;
     }
@@ -266,103 +225,44 @@ body {
     }
 
     .project-header {
-      max-width: 1075px;
-      margin: auto;
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
+        max-width: 1075px;
+        margin: auto;
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
     }
 
     .project-header h2 {
-      font-size: 24px;
-      line-height: 1;
-      color: black;
+        font-size: 24px;
+        line-height: 1;
+        color: black;
     }
 
     .project-header #year {
-      margin: 0 0 0 8px;
-      font-size: 16px;
-      line-height: 1;
-      color: #666;
+        margin: 0 0 0 8px;
+        font-size: 16px;
+        line-height: 1;
+        color: #666;
     }
 
     .project-thumbnail {
-      max-width: 1075px;
-      margin: 12px auto 8px auto;
-      max-height: 650px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding-bottom: 12px;
+        max-width: 1075px;
+        margin: 12px auto 8px auto;
+        max-height: 650px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding-bottom: 12px;
     }
 
     .project-thumbnail .thumb-wrap img {
-      max-height: 650px;
-      width: auto;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .project-thumbnail .img-nav {
-      position: relative;
-      display: inline-flex;
-      justify-content: center;
-      color: black;
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
-      margin: 0 6px;
-      pointer-events: auto;
-      font-size: 30px;
-      overflow: hidden;
-    }
-
-    .project-thumbnail .img-nav.prev {
-      left: 8px;
-    }
-
-    .project-thumbnail .img-nav.next {
-      right: 8px;
-    }
-
-    .project-gallery {
-      max-width: 1075px;
-      margin: 20px auto 100px auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .project-gallery img {
-      width: 100%;
-      aspect-ratio: 1;
-      height: auto;
-      object-fit: cover;
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      .buttons {
-        margin: 60px auto 0 auto;
-        padding: 0 10px;
-      }
-
-      button {
-        font-size: 10px;
-      }
-
-      .project-thumbnail {
-        max-height: 400px;
-        margin: 8px auto 8px auto;
-      }
-
-      .project-thumbnail .thumb-wrap img {
-        max-height: 400px;
-      }
-
+        max-height: 650px;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
 }
