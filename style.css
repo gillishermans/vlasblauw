@@ -12,21 +12,7 @@ body {
 }
 
 .privacy-link {
-    display: block;
-    position: relative;
-    bottom: 40px;
-    color: black;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 11px;
-    text-decoration: italic;
-    z-index: 9999;
-    text-align: right;
-    justify-content: flex-end;
-}
-
-.privacy-link:hover {
-    opacity: 0.5;
+    display: none;
 }
 
 /* Text block for vlasblauw/contact/privacy policy */
@@ -214,6 +200,13 @@ body {
     width: 18px;
     margin: 0 2px;
     padding: 0 2px;
+}
+
+.bottomnav .privacy-policy{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: right;
 }
 
 /* Projects grid container for projects/ongoing */
@@ -789,15 +782,26 @@ button {
         line-height: 0.2;
     }
 
-    /* optional: tighter spacing on very small screens */
-    @media (max-width: 480px) {
-        #projects-container {
-            padding: 0 8px;
-        }
-
-        .project {
-            gap: 8px;
-        }
+    .privacy-link {
+        display: block;
+        position: relative;
+        bottom: 40px;
+        color: black;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        text-decoration: italic;
+        z-index: 9999;
+        text-align: right;
+        justify-content: flex-end;
     }
+
+    .privacy-link:hover {
+        opacity: 0.5;
+    }
+
+    .bottomnav .privacy-policy{
+    display:none;
+}
 
 }
