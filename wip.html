@@ -95,10 +95,12 @@
     (async function () {
       const container = document.getElementById('projects-container');
 
+      //Joins the path to form absolute path
       function joinPath(a, b) {
         return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
       }
 
+      //Resolves the thumbnail path for a project item
       function resolveThumb(it) {
         let t = String(it.thumbnail || '').trim();
         const looksAbsolute = /^\/|^[a-zA-Z]+:\/\//.test(t);
@@ -114,6 +116,7 @@
       }
 
       try {
+        //Fetch inprogress.json
         const res = await fetch('./inprogress.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error('inprogress.json not found');
         const items = await res.json();
@@ -122,12 +125,12 @@
           return;
         }
 
-        //Build DOM for each project
+        //Build project elements for each project in JSON
         items.forEach((it) => {
           const projectEl = document.createElement('section');
           projectEl.className = 'project';
 
-          //Thumbnail (linked to project viewer)
+          //Thumbnail (linked to project viewer page)
           const thumbDiv = document.createElement('div');
           thumbDiv.className = 'project-thumbnail';
           const link = document.createElement('a');

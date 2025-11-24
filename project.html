@@ -129,7 +129,7 @@
         return String(a).replace(/\/+$/, '') + '/' + String(b).replace(/^\/+/, '');
       }
 
-      //Load full manifest
+      //Load full project manifest
       let manifest = [];
       try {
         const res = await fetch('./projects.json', { cache: 'no-cache' });
@@ -142,6 +142,12 @@
 
       //Get the entry from manifest based on computed index  
       const entry = manifestIndex !== -1 && Array.isArray(manifest) ? manifest[manifestIndex] : null;
+
+      //If no entry found in manifest display message
+      if (!entry) {
+        galleryElement.innerHTML = `<p style="font-style:italic;text-align:center; margin:100px auto auto;>Project "${decodedFolder}" niet gevonden in manifest.</p>`;
+        return;
+      }
 
       //Setup previous and next buttons
       if (prevBtn && nextBtn) {
@@ -169,14 +175,7 @@
         }
       }
 
-      //If no entry found in manifest display message
-      if (!entry) {
-        galleryElement.innerHTML = `<p style="font-style:italic;text-align:center; margin:100px auto auto;>Project "${decodedFolder}" niet gevonden in manifest.</p>`;
-        return;
-      }
-
       //Set title/year/description/images from json manifest if available
-      //titleElement.textContent = entry.title;
       const titleText = String(entry.title);
       for (const ch of titleText) {
         const span = document.createElement('span');
@@ -215,7 +214,7 @@
         return;
       }
 
-      // open lightbox with a given image src (no index controls)
+      //Open the lightbox with a given image src
       function openLightboxWithSrc(src) {
         if (!src) return;
         lightboxImg.src = String(src).replace(/^\/+/, '');
@@ -225,6 +224,7 @@
         resetZoom();
       }
 
+      //Close the lightbox
       function closeLightbox() {
         lightbox.setAttribute('aria-hidden', 'true');
         lightboxImg.src = '';
@@ -233,7 +233,7 @@
         resetZoom();
       }
 
-      // open fullscreen for clicked gallery image (no index nav)
+      //Open fullscreen for clicked gallery image
       galleryElement.addEventListener('click', (e) => {
         const item = e.target.closest('.gallery-item');
         if (!item) return;
@@ -242,18 +242,18 @@
         openLightboxWithSrc(imgEl.src || imgEl.getAttribute('src'));
       });
 
-      // make thumbnail click open current thumbnail image in fullscreen
+      //Make thumbnail click open current thumbnail image in fullscreen
       thumbnailImageElement.addEventListener('click', () => {
         const timg = thumbnailImageElement.querySelector('img');
         if (timg) openLightboxWithSrc(timg.src || timg.getAttribute('src'));
       });
 
-      // lightbox controls
+      //Lightbox controls
       lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) closeLightbox(); // click outside image closes
       });
 
-      // keyboard navigation when lightbox open
+      //Keyboard navigation when lightbox open
       window.addEventListener('keydown', (e) => {
         if (lightbox.getAttribute('aria-hidden') === 'false') {
           if (e.key === 'Escape') return closeLightbox();
@@ -280,8 +280,8 @@
       let baseImgWidth = 0;
       let baseImgHeight = 0;
 
+      //Clamp translate so the image cannot be panned beyond edges of the lightbox
       function setTransform() {
-        //Clamp translate so the image cannot be panned beyond edges of the lightbox
         const containerRect = lbInner.getBoundingClientRect();
         const containerW = containerRect.width;
         const containerH = containerRect.height;
@@ -304,7 +304,7 @@
         const r = lightboxImg.getBoundingClientRect();
         baseImgWidth = r.width;
         baseImgHeight = r.height;
-        // restore transform (use setTimeout to ensure the browser updated layout)
+        //Restore transform (use setTimeout to ensure the browser updated layout)
         requestAnimationFrame(() => {
           lightboxImg.style.transition = prevTransition || 'transform 120ms ease-out';
           lightboxImg.style.transform = prevTransform || '';
@@ -347,22 +347,6 @@
         scale = newScale;
         setTransform();
       }, { passive: false });
-
-      //Double click toggles zoom
-      lightboxImg.addEventListener('dblclick', (e) => {
-        e.preventDefault();
-        const rect = lightboxImg.getBoundingClientRect();
-        const cx = e.clientX - rect.left - rect.width / 2;
-        const cy = e.clientY - rect.top - rect.height / 2;
-        if (scale === 1) {
-          scale = 2;
-          translateX -= cx * (2 - 1);
-          translateY -= cy * (2 - 1);
-        } else {
-          resetZoom();
-        }
-        setTransform();
-      });
 
       //Pointer handlers for pan and pinch
       lbInner.addEventListener('pointerdown', (e) => {
@@ -423,10 +407,11 @@
       lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) { closeLightbox(); resetZoom(); }
       });
-      // ensure zoom reset when image src changes
+      //Ensure zoom reset when image src changes
       const obs = new MutationObserver(() => resetZoom());
       obs.observe(lightboxImg, { attributes: true, attributeFilter: ['src'] });
 
+      //Resolve video path
       function resolveVideoPath(f) {
         let s = String(f || '').trim();
         if (!s) return '';
@@ -435,6 +420,7 @@
         return joinPath(base, s);
       }
 
+      //Render videos including credits if available
       function renderVideos() {
         const videosContainer = document.getElementById('project-videos');
         const raw = Array.isArray(entry.videos) ? entry.videos : [];
@@ -514,7 +500,7 @@
       currentIndex = matched !== -1 ? matched : 0;
       renderIndex(currentIndex);
 
-      // Add images to gallery (use renderGallery to keep credits logic consistent)
+      //Add images to gallery
       renderGallery();
     })();
   </script>
